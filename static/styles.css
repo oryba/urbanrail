@@ -1,0 +1,117 @@
+a {
+    text-decoration: none;
+}
+
+.header-row {
+    display: flex;
+    flex-flow: row;
+}
+
+.header-arrow {
+    flex: 1;
+    background: #FAD21A;
+}
+
+.header-arrow-right {
+    border-left: clamp(1rem, 3vw, 1.5rem) solid transparent;
+    border-top: clamp(1rem, 3vw, 1.5rem) solid #FAD21A;
+    border-bottom: clamp(1rem, 3vw, 1.5rem) solid #FAD21A;
+}
+
+.header-arrow-left {
+    border-left: clamp(1rem, 3vw, 1.5rem) solid #FAD21A;
+    border-top: clamp(1rem, 3vw, 1.5rem) solid transparent;
+    border-bottom: clamp(1rem, 3vw, 1.5rem) solid transparent;
+}
+
+.header-station {
+    font-size: clamp(2rem, 6vw, 3rem);
+    font-family: sans-serif, Roboto;
+    font-weight: 400;
+    margin: 0 2rem;
+    line-height: clamp(2rem, 6vw, 3rem);
+}
+
+.header-station > a {
+    color: inherit;
+}
+
+.header-station .material-symbols-outlined {
+    font-size: inherit;
+    vertical-align: bottom;
+}
+
+h2.other-station {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    font-family: sans-serif, Roboto;
+    font-weight: 100;
+    text-align: center;
+}
+
+h2.other-station a {
+    color: #1676d2;
+}
+
+.station-list {
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
+    padding: 10px 0;
+}
+
+h2.station-list-item {
+    font-size: clamp(1.5rem, 3.5vw, 3rem);
+    font-family: sans-serif, Roboto;
+    font-weight: 100;
+    color: #1676d2;
+    padding: 5px 0;
+    margin: 5px 0;
+    border-radius: 2em;
+}
+
+h2.station-list-item:hover {
+    background: #1676d2;
+    color: white;
+}
+
+h2.station-list-item a {
+    color: inherit;
+}
+
+h3.time-window {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    font-family: sans-serif, Roboto;
+    font-weight: 100;
+    text-align: center;
+}
+
+.station-departures {
+    text-align: center;
+    width: 90%;
+    margin: auto;
+    overflow: scroll;
+    display: block;
+}
+
+span.time-badge {
+    font-size: clamp(1.7rem, 3vw, 1.7rem);
+    font-family: sans-serif, Roboto;
+    font-weight: 100;
+    background: #1976D2;
+    border-radius: 1em;
+    padding: 6px 17px;
+    margin: 4px;
+    display: inline-block;
+    color: white;
+}
+
+span.time-badge.past {
+    background: #E6E6E6;
+    color: #6b6a6a;
+}
+
+.station-departures > .future ~ .future {
+    background: #4aa2f8;
+}
+

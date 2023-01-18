@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ station.station }} - розклад руху міської електрички</title>
+    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght,XTRA@8..144,125,600,500&family=Roboto+Mono:ital,wght@0,100;0,200;0,500;0,700;1,100&family=Roboto:wght@100;300;400&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+<body>
+<header>
+    <div class="header-row">
+        <div class="header-arrow"></div>
+        <div class="header-arrow-left"></div>
+        <div class="header-station"><a href="/stations">{{ station.station }} <span class="material-symbols-outlined">search</span></a></div>
+        <div class="header-arrow-right"></div>
+        <div class="header-arrow"></div>
+    </div>
+</header>
+<br>
+<br>
+<section>
+    <h2 class="other-station">У бік станції <a href="/stations/{{ station.next.slug }}">{{ station.next.station }}</a></h2>
+    <h3 class="time-window">з {{ station.departures_forth[0] }} по {{ station.departures_forth[-1] }}</h3>
+    <div class="station-departures">
+        {% for item in station.departures_forth %}
+            <span class="time-badge {{ 'past' if item < time else 'future' }}">{{ item }}</span>
+        {% endfor %}
+    </div>
+</section>
+<br>
+<br>
+<section>
+    <h2 class="other-station">У бік станції <a href="/stations/{{ station.prev.slug }}">{{ station.prev.station }}</a></h2>
+    <h3 class="time-window">з {{ station.departures_back[0] }} по {{ station.departures_back[-1] }}</h3>
+    <div class="station-departures">
+        {% for item in station.departures_forth %}
+            <span class="time-badge {{ 'past' if item < time else 'future' }}">{{ item }}</span>
+        {% endfor %}
+    </div>
+</section>
+</body>
+</html>
