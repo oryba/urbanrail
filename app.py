@@ -1,5 +1,7 @@
 from datetime import datetime
+from typing import Optional
 
+import pytz
 from fastapi import FastAPI, Request, status
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
@@ -20,7 +22,8 @@ async def read_item(request: Request):
 
 
 @app.get("/stations/{slug}", response_class=HTMLResponse)
-async def read_item(request: Request, slug: str):
+@app.get("/stations/{slug}/{day}", response_class=HTMLResponse)
+async def read_item(request: Request, slug: str, day: Optional[str] = None):
     schedule = await get_schedule()
     slugs = [s['slug'] for s in schedule]
     try:
@@ -28,12 +31,18 @@ async def read_item(request: Request, slug: str):
     except ValueError:
         raise status.HTTP_404_NOT_FOUND
     station = schedule[idx]
-    now = datetime.now()
+    now = datetime.now().astimezone(pytz.timezone('Europe/Kiev'))
     time = f"{now.hour:02d}:{now.minute:02d}"
     station['next'] = schedule[(idx + 1) % len(schedule)]
     station['prev'] = schedule[idx - 1]
-    return templates.TemplateResponse("station.html", {"request": request, "schedule": schedule, "station": station, "time": time})
+    if day == 'weekend' or (day is None and now.weekday() >= 5):
+        station['departures_forth'] = [s for s in station['departures_forth'] if s['schedule'] == 'daily']
+        station['departures_back'] = [s for s in station['departures_back'] if s['schedule'] == 'daily']
+    return templates.TemplateResponse("station.html", {
+        "request": request, "schedule": schedule, "station": station, "time": time, "day": day})
 
+
+app.mount("/", StaticFiles(directory="static/favicon"), name="favicon")
 
 if __name__ == '__main__':
     import uvicorn

@@ -1,5 +1,17 @@
+body {
+    margin: 0;
+    font-family: sans-serif, Roboto;
+}
+
 a {
     text-decoration: none;
+}
+
+header h1 {
+    font-size: clamp(1rem, 6vw, 3rem);
+    text-align: center;
+    font-weight: 100;
+    color: #5c5c5c;
 }
 
 .header-row {
@@ -25,11 +37,12 @@ a {
 }
 
 .header-station {
-    font-size: clamp(2rem, 6vw, 3rem);
-    font-family: sans-serif, Roboto;
+    font-size: clamp(1rem, 6vw, 3rem);
     font-weight: 400;
     margin: 0 2rem;
-    line-height: clamp(2rem, 6vw, 3rem);
+    line-height: clamp(1rem, 6vw, 3rem);
+    display: flex;
+    align-items: center;
 }
 
 .header-station > a {
@@ -42,14 +55,33 @@ a {
 }
 
 h2.other-station {
-    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    font-size: clamp(1rem, 4.5vw, 2rem);
     font-family: sans-serif, Roboto;
-    font-weight: 100;
+    font-weight: 400;
     text-align: center;
 }
 
 h2.other-station a {
     color: #1676d2;
+}
+
+.select-day {
+    text-align: center;
+    margin: 2vw;
+}
+
+.select-day a {
+    text-decoration: none;
+    color: #1676d2;
+    margin: 0 2vw;
+    font-size: clamp(0.8rem, 3vw, 1.4rem);
+}
+
+.select-day a.active {
+    color: white;
+    background: #1676d2;
+    border-radius: 1.4rem;
+    padding: 0 1vw;
 }
 
 .station-list {
@@ -63,7 +95,7 @@ h2.other-station a {
 h2.station-list-item {
     font-size: clamp(1.5rem, 3.5vw, 3rem);
     font-family: sans-serif, Roboto;
-    font-weight: 100;
+    font-weight: 300;
     color: #1676d2;
     padding: 5px 0;
     margin: 5px 0;
@@ -80,10 +112,11 @@ h2.station-list-item a {
 }
 
 h3.time-window {
-    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    font-size: clamp(1rem, 4vw, 1.7rem);
     font-family: sans-serif, Roboto;
-    font-weight: 100;
+    font-weight: 300;
     text-align: center;
+    color: #5c5c5c;
 }
 
 .station-departures {
@@ -95,23 +128,27 @@ h3.time-window {
 }
 
 span.time-badge {
-    font-size: clamp(1.7rem, 3vw, 1.7rem);
+    font-size: clamp(1rem, 3vw, 1.7rem);
     font-family: sans-serif, Roboto;
-    font-weight: 100;
-    background: #1976D2;
+    font-weight: 400;
     border-radius: 1em;
     padding: 6px 17px;
     margin: 4px;
+    background: #4aa2f8;
     display: inline-block;
     color: white;
 }
 
-span.time-badge.past {
-    background: #E6E6E6;
-    color: #6b6a6a;
+span.time-badge.compare-time {
+    background: #1976D2;
 }
 
-.station-departures > .future ~ .future {
+span.time-badge.past {
+    background: #E6E6E6;
+    color: #5c5c5c;
+}
+
+.station-departures > .compare-time.future ~ .compare-time.future {
     background: #4aa2f8;
 }
 
