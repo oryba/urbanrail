@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>{{ station.station }} - розклад руху міської електрички</title>
-    <link href="/static/styles.css" rel="stylesheet">
+    <title>{{ station.station }} - розклад руху київської міської електрички</title>
+
+    <meta property="og:title" content="Станція {{ station.station }} - розклад руху київської міської електрички" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://urbanrail.oryba.dev/stations/{{ station.slug }}" />
+    <meta property="og:image" content="https://urbanrail.oryba.dev/android-chrome-512x512.png" />
+
+    <link href="/static/styles.css?v=0" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght,XTRA@8..144,125,600,500&family=Roboto+Mono:ital,wght@0,100;0,200;0,500;0,700;1,100&family=Roboto:wght@100;300;400;500&display=swap"
@@ -35,7 +41,7 @@
 </script>
 <body>
 <header>
-    <h1>Розклад міської електрички</h1>
+    <h1><a href="/">Розклад міської електрички</a></h1>
     <div class="header-row">
         <div class="header-arrow"></div>
         <div class="header-arrow-left"></div>
@@ -53,7 +59,7 @@
 <section>
     <h2 class="other-station">У бік станції <a href="/stations/{{ station.next.slug }}">{{ station.next.station }}</a>
     </h2>
-    <h3 class="time-window">з {{ station.departures_forth[0].time }} по {{ station.departures_forth[-1].time }}</h3>
+    <h3 class="time-window">з {{ station.departures_forth[0].time }} до {{ station.departures_forth[-1].time }}</h3>
     <div class="station-departures">
         {% for item in station.departures_forth %}
         <span class="time-badge {{not day and 'compare-time'}} {{ 'past' if not day and item.time < time else 'future' }}">{{ item.time }}</span>
@@ -63,12 +69,31 @@
 <section>
     <h2 class="other-station">У бік станції <a href="/stations/{{ station.prev.slug }}">{{ station.prev.station }}</a>
     </h2>
-    <h3 class="time-window">з {{ station.departures_back[0].time }} по {{ station.departures_back[-1].time }}</h3>
+    <h3 class="time-window">з {{ station.departures_back[0].time }} до {{ station.departures_back[-1].time }}</h3>
     <div class="station-departures">
-        {% for item in station.departures_forth %}
+        {% for item in station.departures_back %}
         <span class="time-badge {{not day and 'compare-time'}} {{ 'past' if not day and item.time < time else 'future' }}">{{ item.time }}</span>
         {% endfor %}
     </div>
+</section>
+{% if station.transfer_details %}
+<section>
+    <h2 class="other-station">Пересадки</h2>
+    <br>
+    <div class="station-departures">
+        {% for ts, badges in station.transfer_details.items() %}
+        <div class="transfer-station">
+            {% for badge in badges %}
+            <img alt="Пересадка на {{ badge }}" class="transfer-badge" src="/static/{{ badge }}.svg" />
+            {% endfor %}
+            <span>{{ ts }}</span>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+<section class="feedback">
+    <p>Як вам розклад? <a href="https://t.me/urbanrail" rel="nofollow">Пишіть сюди</a>, дрібниця, але приємно:)</p>
 </section>
 </body>
 </html>

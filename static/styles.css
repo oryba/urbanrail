@@ -1,22 +1,29 @@
 body {
     margin: 0;
     font-family: sans-serif, Roboto;
+    color: #18137b;
 }
 
 a {
     text-decoration: none;
+    color: #f39000;
+}
+
+h1 > a {
+   color: #18137b;
 }
 
 header h1 {
     font-size: clamp(1rem, 6vw, 3rem);
     text-align: center;
-    font-weight: 100;
-    color: #5c5c5c;
+    font-weight: 200;
+    color: #18137b;
 }
 
 .header-row {
     display: flex;
     flex-flow: row;
+    justify-content: center;
 }
 
 .header-arrow {
@@ -45,6 +52,18 @@ header h1 {
     align-items: center;
 }
 
+.select-station {
+    background: #18137b;
+    color: white;
+    padding: 0.5em 1em;
+    border-radius: 3em;
+}
+
+.select-station span {
+    margin-left: 5px;
+    max-width: clamp(1rem, 6vw, 3rem);
+}
+
 .header-station > a {
     color: inherit;
 }
@@ -52,6 +71,7 @@ header h1 {
 .header-station .material-symbols-outlined {
     font-size: inherit;
     vertical-align: bottom;
+    max-width: clamp(1rem, 6vw, 3rem);
 }
 
 h2.other-station {
@@ -59,6 +79,7 @@ h2.other-station {
     font-family: sans-serif, Roboto;
     font-weight: 400;
     text-align: center;
+    margin: 2em auto 0 auto;
 }
 
 h2.other-station a {
@@ -79,14 +100,13 @@ h2.other-station a {
 
 .select-day a.active {
     color: white;
-    background: #1676d2;
+    background: #18137b;
     border-radius: 1.4rem;
     padding: 0 1vw;
 }
 
 .station-list {
-    width: 100%;
-    max-width: 500px;
+    width: fit-content;
     margin: auto;
     text-align: center;
     padding: 10px 0;
@@ -96,19 +116,42 @@ h2.station-list-item {
     font-size: clamp(1.5rem, 3.5vw, 3rem);
     font-family: sans-serif, Roboto;
     font-weight: 300;
-    color: #1676d2;
-    padding: 5px 0;
+    color: #18137b;
+    padding: 5px 1em;
     margin: 5px 0;
     border-radius: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 h2.station-list-item:hover {
-    background: #1676d2;
+    background: #18137b;
     color: white;
 }
 
 h2.station-list-item a {
     color: inherit;
+}
+
+.station-list-item img.transfer-badge {
+    width: clamp(1.5rem, 3.5vw, 3rem);
+    height: clamp(1.5rem, 3.5vw, 3rem);
+    margin: 0 0.2em;
+}
+
+.transfer-station {
+    font-size: clamp(0.8rem, 3vw, 1.5rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5em;
+}
+
+.transfer-station img.transfer-badge {
+    width: clamp(0.8rem, 3vw, 1.5rem);
+    height: clamp(0.8rem, 3vw, 1.5rem);
+    margin-right: 0.2em;
 }
 
 h3.time-window {
@@ -117,6 +160,7 @@ h3.time-window {
     font-weight: 300;
     text-align: center;
     color: #5c5c5c;
+    margin-top: 0.1em;
 }
 
 .station-departures {
@@ -134,21 +178,81 @@ span.time-badge {
     border-radius: 1em;
     padding: 6px 17px;
     margin: 4px;
-    background: #4aa2f8;
     display: inline-block;
-    color: white;
+    background: #f0eff7;
+    color: #18137b;
 }
 
 span.time-badge.compare-time {
-    background: #1976D2;
+    background: #18137b;
+    color: white;
 }
 
 span.time-badge.past {
-    background: #E6E6E6;
-    color: #5c5c5c;
+    background: #f0eff7;
+    color: #18137b;
 }
 
 .station-departures > .compare-time.future ~ .compare-time.future {
-    background: #4aa2f8;
+    background: #5c61be;
+    color: white;
 }
 
+footer {
+    color: #9e9e9e;
+    margin: 1em 2em;
+    font-weight: 100;
+    font-size: clamp(0.8rem, 3vw, 1.5rem);
+}
+
+.ticket-bots {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.bot-img {
+    width: 20vw;
+    max-width: 8em;
+    text-align: center;
+    padding: 2vw;
+}
+
+.tg-img {
+    width: 40vw;
+    max-width: 16em;
+    text-align: center;
+    padding: 2vw;
+}
+
+.ticket-bots svg {
+    width: 20vw;
+    height: 20vw;
+    max-width: 8em;
+    max-height: 8em;
+}
+
+.ticket-bots > a {
+    color: unset;
+}
+
+.faq {
+    margin: auto;
+    padding: 0 2em;
+    max-width: 70em;
+}
+
+.faq h3 {
+    font-size: 1em;
+    font-family: sans-serif, Roboto;
+    font-weight: 800;
+}
+
+.faq ul {
+    padding-left: 1em;
+}
+
+.feedback {
+    text-align: center;
+    margin-top: 4em;
+}

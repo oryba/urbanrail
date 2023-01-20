@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Вибір станції - розклад руху міської електрички</title>
-    <link href="/static/styles.css" rel="stylesheet">
+
+    <meta property="og:title" content="Вибір станції - розклад руху міської електрички" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://urbanrail.oryba.dev/stations/{{ station.slug }}" />
+    <meta property="og:image" content="https://urbanrail.oryba.dev/android-chrome-512x512.png" />
+
+    <link href="/static/styles.css?v=0" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght,XTRA@8..144,125,600,500&family=Roboto+Mono:ital,wght@0,100;0,200;0,500;0,700;1,100&family=Roboto:wght@100;300;400&display=swap"
@@ -35,7 +41,11 @@
 <section>
     <div class="station-list">
         {% for item in schedule %}
-        <h2 class="station-list-item"><a href="/stations/{{ item.slug }}">{{ item.station }}</a></h2>
+        <a href="/stations/{{ item.slug }}"><h2 class="station-list-item">{{ item.station }}
+            {% for transfer in item.transfers %}
+            <img alt="Пересадка на {{ transfer }}" class="transfer-badge" src="/static/{{ transfer }}.svg" />
+            {% endfor %}
+        </h2></a>
         {% endfor %}
     </div>
 </section>
