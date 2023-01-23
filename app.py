@@ -47,7 +47,7 @@ async def read_item(request: Request, slug: str, day: Optional[str] = None):
         "request": request, "schedule": schedule, "station": station, "time": time, "day": day})
 
 
-app.mount("/", StaticFiles(directory="static/favicon"), name="favicon")
+app.mount("/", StaticFiles(directory="static/root"), name="root-static")
 
 if __name__ == '__main__':
     import uvicorn

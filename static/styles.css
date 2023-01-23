@@ -6,7 +6,7 @@ body {
 
 a {
     text-decoration: none;
-    color: #f39000;
+    color: #d44600;
 }
 
 h1 > a {
@@ -68,9 +68,12 @@ header h1 {
     color: inherit;
 }
 
-.header-station .material-symbols-outlined {
+.icon {
     font-size: inherit;
     vertical-align: bottom;
+}
+
+.header-station .icon {
     max-width: clamp(1rem, 6vw, 3rem);
 }
 
@@ -80,6 +83,16 @@ h2.other-station {
     font-weight: 400;
     text-align: center;
     margin: 2em auto 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: pre-wrap;
+}
+
+.other-station .icon {
+    width: clamp(1rem, 4.5vw, 2rem);
+    height: clamp(1rem, 4.5vw, 2rem);
+    margin-left: clamp(0.3em, 1vw, 0.5em);
 }
 
 h2.other-station a {
