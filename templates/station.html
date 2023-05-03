@@ -3,14 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>{{ station.station }} - розклад руху київської міської електрички</title>
+    <meta name="color-scheme" content="light dark">
+    <title>{{ station.station }}{{ ' (будні)' if day == 'weekday' else (' (вихідні)' if day == 'weekend' else '') }} - розклад руху київської міської електрички</title>
 
     <meta property="og:title" content="Станція {{ station.station }} - розклад руху київської міської електрички" />
+    <meta property="og:description" content="Станція {{ station.station }} - детальний та зручний розклад руху міської електрички станцією {{ station.station }} {{ 'у будні' if day == 'weekday' else ('у вихідні' if day == 'weekend' else '') }}" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://urbanrail.oryba.dev/stations/{{ station.slug }}" />
-    <meta property="og:image" content="https://urbanrail.oryba.dev/static/preview.svg" />
+    <meta property="og:url" content="https://urbanrail.kyiv.group/stations/{{ station.slug }}" />
+    <meta property="og:image" content="https://urbanrail.kyiv.group/static/preview.svg" />
 
-    <link href="/static/styles.css?v=1" rel="stylesheet">
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="urbanrail.kyiv.group">
+    <meta property="twitter:url" content="https://urbanrail.kyiv.group/stations/{{ station.slug }}">
+    <meta name="twitter:title" content="Станція {{ station.station }} - розклад руху київської міської електрички">
+    <meta name="twitter:description"
+          content="Станція {{ station.station }} - детальний та зручний розклад руху міської електрички київським залізничним кільцем">
+    <meta name="twitter:image" content="https://urbanrail.kyiv.group/static/preview.svg">
+
+    <link href="/static/styles.css?v=2" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght,XTRA@8..144,125,600,500&family=Roboto+Mono:ital,wght@0,100;0,200;0,500;0,700;1,100&family=Roboto:wght@100;300;400;500&display=swap"
@@ -25,17 +36,15 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DGDRRZZJ2C"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11164561487">
+</script>
 <script>
-    window.dataLayer = window.dataLayer || [];
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-
-    gtag('config', 'G-DGDRRZZJ2C');
+  gtag('config', 'AW-11164561487');
+  gtag('event', 'conversion', {'send_to': 'AW-11164561487/IRR6CLz2zZsYEM_g1ssp'});
 </script>
 <body>
 <header>
@@ -46,7 +55,11 @@
         <div class="header-station">
             <a href="/stations">
                 {{ station.station }}
-                <img alt="Вибір станції" class="icon" src="/static/search.svg" />
+                <span class="icon">
+                    <svg>
+                        <use xlink:href="/static/bot.svg#search"></use>
+                    </svg>
+                </span>
             </a>
         </div>
         <div class="header-arrow-right"></div>
@@ -60,7 +73,11 @@
 </section>
 <section>
     <h2 class="other-station">У бік станції <a href="/stations/{{ station.next.slug }}">{{ station.next.station }}</a>
-        <img alt="Проти годинникової стрілки" class="icon" src="/static/counterclockwise.svg" />
+        <span class="icon">
+            <svg>
+                <use xlink:href="/static/bot.svg#counterclockwise"></use>
+            </svg>
+        </span>
     </h2>
     <h3 class="time-window">з {{ station.departures_forth[0].time }} до {{ station.departures_forth[-1].time }}</h3>
     <div class="station-departures">
@@ -71,7 +88,11 @@
 </section>
 <section>
     <h2 class="other-station">У бік станції <a href="/stations/{{ station.prev.slug }}">{{ station.prev.station }}</a>
-        <img alt="Проти годинникової стрілки" class="icon" src="/static/clockwise.svg" />
+        <span class="icon">
+            <svg>
+                <use xlink:href="/static/bot.svg#clockwise"></use>
+            </svg>
+        </span>
     </h2>
     <h3 class="time-window">з {{ station.departures_back[0].time }} до {{ station.departures_back[-1].time }}</h3>
     <div class="station-departures">

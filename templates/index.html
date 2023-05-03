@@ -3,15 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="color-scheme" content="light dark">
     <title>Розклад руху київської міської електрички</title>
 
-    <meta property="og:title" content="Розклад руху київської міської електрички" />
-    <meta property="og:description" content="Детальний та зручний розклад руху міської електрички київським залізничним кільцем" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://urbanrail.oryba.dev/" />
-    <meta property="og:image" content="https://urbanrail.oryba.dev/static/preview.svg" />
+    <meta property="og:title" content="Розклад руху київської міської електрички"/>
+    <meta property="og:description"
+          content="Детальний та зручний розклад руху міської електрички київським залізничним кільцем"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://urbanrail.kyiv.group"/>
+    <meta property="og:image" content="https://urbanrail.kyiv.group/static/preview.svg"/>
 
-    <link href="/static/styles.css?v=1" rel="stylesheet">
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="urbanrail.kyiv.group">
+    <meta property="twitter:url" content="https://urbanrail.kyiv.group">
+    <meta name="twitter:title" content="Розклад руху київської міської електрички">
+    <meta name="twitter:description"
+          content="Детальний та зручний розклад руху міської електрички київським залізничним кільцем">
+    <meta name="twitter:image" content="https://urbanrail.kyiv.group/static/preview.svg">
+
+    <link href="/static/styles.css?v=2" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght,XTRA@8..144,125,600,500&family=Roboto+Mono:ital,wght@0,100;0,200;0,500;0,700;1,100&family=Roboto:wght@100;300;400;500&display=swap"
@@ -26,24 +37,27 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DGDRRZZJ2C"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-
-    gtag('config', 'G-DGDRRZZJ2C');
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11164561487">
 </script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-11164561487');
+  gtag('event', 'conversion', {'send_to': 'AW-11164561487/IRR6CLz2zZsYEM_g1ssp'});
+</script>
+
 <body>
 <header>
-    <h1>Розклад міської електрички</h1>
+    <h1><a href="/">Розклад міської електрички</a></h1>
     <div class="header-row">
         <a href="/stations" class="header-station select-station">Виберіть станцію...
-            <img alt="Вибір станції" class="icon" src="/static/search-white.svg" />
+            <span class="icon">
+                <svg>
+                    <use xlink:href="/static/bot.svg#search"></use>
+                </svg>
+            </span>
         </a>
     </div>
 </header>
@@ -99,14 +113,14 @@
         <li><a href="https://kyivcityexpress.uz.gov.ua/" rel="nofollow">офіційний сайт</a> є (до того ж, симпатичний),
             там значно більше корисного
         </li>
-        <li>Електричка не зупиняється під час повітряної тривоги</li>
+        <li>електричка продовжує курсувати під час повітряної тривоги</li>
     </ul>
 </section>
 
 <section>
     <div class="ticket-bots">
         <a href="https://t.me/kyiv_city_express" class="tg-img" rel="nofollow">
-             <svg>
+            <svg>
                 <use xlink:href="/static/bot.svg#chanel-uz"></use>
             </svg>
             <div>Офіційний ТГ електрички</div>

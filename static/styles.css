@@ -59,18 +59,29 @@ header h1 {
     border-radius: 3em;
 }
 
-.select-station span {
+.select-station span, .header-station .icon {
     margin-left: 5px;
     max-width: clamp(1rem, 6vw, 3rem);
 }
 
 .header-station > a {
     color: inherit;
+    display: flex;
 }
 
 .icon {
     font-size: inherit;
     vertical-align: bottom;
+    display: flex;
+}
+
+span.icon {
+    display: flex;
+    align-items: center;
+}
+
+.icon > svg {
+    height: clamp(1rem, 6vw, 3rem);
 }
 
 .header-station .icon {
@@ -268,4 +279,57 @@ footer {
 .feedback {
     text-align: center;
     margin-top: 4em;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        color: #f0eff7;
+        background: black;
+    }
+
+    h1 > a {
+        color: #f0eff7;
+    }
+
+    h3.time-window {
+        color: #c9c9c9;
+    }
+
+    .select-day a, h2.other-station a {
+        color: #4da8ff;
+    }
+
+    span.time-badge.compare-time {
+        background: #fbd21a;
+        color: #040149;
+    }
+
+    span.time-badge.past {
+        background: #ffffff;
+        color: #18137b;
+    }
+
+    .station-departures > .compare-time.future ~ .compare-time.future {
+        background: #ffeb93;
+        color: #040149;
+    }
+
+    .select-day a.active {
+        color: #040149;
+        background: #fbd319;
+    }
+
+    h2.station-list-item {
+        color: #f0eff7;
+    }
+
+    h2.station-list-item:hover {
+        background: #fbd319;
+        color: #040149;
+    }
+
+    .select-station {
+        color: #040149;
+        background: #fbd319;
+    }
 }

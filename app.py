@@ -1,34 +1,51 @@
 from datetime import datetime
-from typing import Optional
+from typing import Optional, List
 
 import pytz
-from fastapi import FastAPI, Request, status
+from fastapi import FastAPI, Request, status, APIRouter
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
-from data import get_schedule
+from data import get_schedule, ScheduleItem, Schedule
 
 app = FastAPI()
 
-app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/static", StaticFiles(directory="static"), name="static")  # regular static files
 templates = Jinja2Templates(directory="templates")
 
 
-@app.get("/", response_class=HTMLResponse)
+@app.get("/", response_class=HTMLResponse, tags=["ssr"])
 async def read_item(request: Request):
+    """
+    Render index page
+    :param request: starlette request
+    :return: static html
+    """
     return templates.TemplateResponse("index.html", {"request": request})
 
 
-@app.get("/stations", response_class=HTMLResponse)
+@app.get("/stations", response_class=HTMLResponse, tags=["ssr"])
 async def read_item(request: Request):
+    """
+    Render stations list
+    :param request: starlette request
+    :return: static html
+    """
     schedule = await get_schedule()
     return templates.TemplateResponse("list.html", {"request": request, "schedule": schedule})
 
 
-@app.get("/stations/{slug}", response_class=HTMLResponse)
-@app.get("/stations/{slug}/{day}", response_class=HTMLResponse)
+@app.get("/stations/{slug}", response_class=HTMLResponse, tags=["ssr"])
+@app.get("/stations/{slug}/{day}", response_class=HTMLResponse, tags=["ssr"])
 async def read_item(request: Request, slug: str, day: Optional[str] = None):
+    """
+    Render station schedule (by default for today, optionally - for weekend or weekday)
+    :param request: starlette request
+    :param slug: station slug
+    :param day: None for today's schedule, 'weekday' or 'weekend' otherwise
+    :return: static html
+    """
     schedule = await get_schedule()
     slugs = [s['slug'] for s in schedule]
     try:
@@ -47,6 +64,15 @@ async def read_item(request: Request, slug: str, day: Optional[str] = None):
         "request": request, "schedule": schedule, "station": station, "time": time, "day": day})
 
 
+api = APIRouter()
+
+
+@api.get('/schedule', tags=["rest"], response_model=Schedule)
+async def api_schedule() -> Schedule:
+    return Schedule(items=await get_schedule())
+
+
+app.include_router(api, prefix="/v1")
 app.mount("/", StaticFiles(directory="static/root"), name="root-static")
 
 if __name__ == '__main__':
