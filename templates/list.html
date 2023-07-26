@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="color-scheme" content="light dark">
     <title>Вибір станції - розклад руху міської електрички</title>
 
-    <meta property="og:title" content="Вибір станції - розклад руху київської міської електрички" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://urbanrail.kyiv.group/stations" />
-    <meta property="og:image" content="https://urbanrail.kyiv.group/static/preview.svg" />
+    <meta property="og:title" content="Вибір станції - актуальний розклад руху київської міської електрички"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://urbanrail.kyiv.group/stations"/>
+    <meta property="og:image" content="https://urbanrail.kyiv.group/static/preview.svg"/>
+    <meta property="og:description" content="Оберіть станцію зі списку, щоб побачити актуальний розклад"/>
+    <meta property="description" content="Оберіть станцію зі списку, щоб побачити актуальний розклад"/>
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
@@ -33,25 +35,30 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-</head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11164561487">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'AW-11164561487');
-  gtag('event', 'conversion', {'send_to': 'AW-11164561487/IRR6CLz2zZsYEM_g1ssp'});
-</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11164561487">
+    </script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-DGDRRZZJ2C');
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11164561487"></script>
+</head>
 <body>
 <section>
     <div class="station-list">
         {% for item in schedule %}
         <a href="/stations/{{ item.slug }}"><h2 class="station-list-item">{{ item.station }}
             {% for transfer in item.transfers %}
-            <img alt="Пересадка на {{ transfer }}" class="transfer-badge" src="/static/{{ transfer }}.svg" />
+            <img alt="Пересадка на {{ transfer }}" class="transfer-badge" src="/static/{{ transfer }}.svg"/>
             {% endfor %}
         </h2></a>
         {% endfor %}

@@ -13,6 +13,10 @@ h1 > a {
    color: #18137b;
 }
 
+.mt-3 {
+    margin-top: 3em!important;
+}
+
 header h1 {
     font-size: clamp(1rem, 6vw, 3rem);
     text-align: center;
@@ -258,6 +262,20 @@ footer {
 
 .ticket-bots > a {
     color: unset;
+}
+
+.warning {
+    color: #18137b;
+    border-top: 4px solid orange;
+    border-bottom: 4px solid orange;
+    background: #fff8ed;
+    margin: auto;
+    padding: 0.1em 2em;
+    max-width: 70em;
+}
+
+.warning ul {
+    padding-inline-start: 1em;
 }
 
 .faq {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -8,7 +8,9 @@
 
     <meta property="og:title" content="Розклад руху київської міської електрички"/>
     <meta property="og:description"
-          content="Детальний та зручний розклад руху міської електрички київським залізничним кільцем"/>
+          content="Актуальний та зручний розклад руху міської електрички g:description"/>
+    <meta property="description"
+          content="Актуальний та зручний розклад руху міської електрички київським залізничним кільцем"/>
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="https://urbanrail.kyiv.group"/>
     <meta property="og:image" content="https://urbanrail.kyiv.group/static/preview.svg"/>
@@ -33,21 +35,67 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="canonical" href="https://urbanrail.kyiv.group/">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "Що це за транспорт?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>Міська електричка - швидкісний транспорт, що курсує київським залізничним кільцем. Це зручний та швидкий спосіб дістатися віддаленого району, подорожувати із велосипедом чи просто насолодитися краєвидами.</p>"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Розклад? Навіщо?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Електрички курсують регулярно, але не надто часто, тож просто приходити на станцію та чекати потяга \"як у метро\" не найкраща ідея. Що ж, не проблема, поїзди дотримуються розкладу. Обирайте станцію та насолоджуйтеся:)"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Яка вартість проїзду?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>Вартість проїзду - 15 грн. Сплатити можна транспортною карткою на станції, готівкою у потязі чи за допомогою телеграм-бота. Майте на увазі, що з транспортної карти зніметься грошовий еквівалент, а не поїздка.</p>"
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Чи зупиняється електричка на час повітряної тривоги?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "<p>Ні, електричка продовжує курсувати під час повітряної тривоги</p>"
+                    }
+                }
+            ]
+        }
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11164561487">
+    </script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-DGDRRZZJ2C');
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11164561487"></script>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11164561487">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-11164561487');
-  gtag('event', 'conversion', {'send_to': 'AW-11164561487/IRR6CLz2zZsYEM_g1ssp'});
-</script>
-
 <body>
 <header>
     <h1><a href="/">Розклад міської електрички</a></h1>
@@ -109,7 +157,9 @@
         намочить екран смартфону!</p>
     <h3>Що ще мені слід знати перед тим, як йти на станцію?</h3>
     <ul>
-        <li>вартість проїзду - 15 грн. Сплатити можна готівкою у потязі чи за допомогою телеграм-бота</li>
+        <li>вартість проїзду - 15 грн. Сплатити можна транспортною карткою на станції, готівкою у потязі чи за допомогою
+            телеграм-бота. Майте на увазі, що з транспортної карти зніметься грошовий еквівалент, а не поїздка.
+        </li>
         <li><a href="https://kyivcityexpress.uz.gov.ua/" rel="nofollow">офіційний сайт</a> є (до того ж, симпатичний),
             там значно більше корисного
         </li>

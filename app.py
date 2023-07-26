@@ -1,3 +1,6 @@
+import os
+
+from urllib.parse import urljoin
 from datetime import datetime
 from typing import Optional, List
 
@@ -10,6 +13,8 @@ from fastapi.templating import Jinja2Templates
 from data import get_schedule, ScheduleItem, Schedule
 
 app = FastAPI()
+
+BASE_URL = os.getenv('BASE_URL', 'https://urbanrail.kyiv.group')
 
 app.mount("/static", StaticFiles(directory="static"), name="static")  # regular static files
 templates = Jinja2Templates(directory="templates")
@@ -61,7 +66,8 @@ async def read_item(request: Request, slug: str, day: Optional[str] = None):
         station['departures_forth'] = [s for s in station['departures_forth'] if s['schedule'] == 'daily']
         station['departures_back'] = [s for s in station['departures_back'] if s['schedule'] == 'daily']
     return templates.TemplateResponse("station.html", {
-        "request": request, "schedule": schedule, "station": station, "time": time, "day": day})
+        "request": request, "schedule": schedule, "station": station, "time": time, "day": day,
+        "canonical": urljoin(BASE_URL, request.scope.get('path', ''))})
 
 
 api = APIRouter()

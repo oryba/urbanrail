@@ -1,21 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="color-scheme" content="light dark">
-    <title>{{ station.station }}{{ ' (будні)' if day == 'weekday' else (' (вихідні)' if day == 'weekend' else '') }} - розклад руху київської міської електрички</title>
+    <title>{{ station.station }}{{ ' (будні)' if day == 'weekday' else (' (вихідні)' if day == 'weekend' else '') }} -
+        розклад руху київської міської електрички</title>
 
-    <meta property="og:title" content="Станція {{ station.station }} - розклад руху київської міської електрички" />
-    <meta property="og:description" content="Станція {{ station.station }} - детальний та зручний розклад руху міської електрички станцією {{ station.station }} {{ 'у будні' if day == 'weekday' else ('у вихідні' if day == 'weekend' else '') }}" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://urbanrail.kyiv.group/stations/{{ station.slug }}" />
-    <meta property="og:image" content="https://urbanrail.kyiv.group/static/preview.svg" />
+    <meta property="og:title"
+          content="Станція {{ station.station }} - актуальний розклад руху київської міської електрички"/>
+    <meta property="og:description"
+          content="Станція {{ station.station }} - актуальний та зручний розклад руху міської електрички станцією {{ station.station }} {{ 'у будні' if day == 'weekday' else ('у вихідні' if day == 'weekend' else '') }}"/>
+    <meta name="description"
+          content="Станція {{ station.station }} - актуальний та зручний розклад руху міської електрички станцією {{ station.station }} {{ 'у будні' if day == 'weekday' else ('у вихідні' if day == 'weekend' else '') }}">
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="{{ canonical }}"/>
+    <meta property="og:image" content="https://urbanrail.kyiv.group/static/preview.svg"/>
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta property="twitter:domain" content="urbanrail.kyiv.group">
-    <meta property="twitter:url" content="https://urbanrail.kyiv.group/stations/{{ station.slug }}">
+    <meta property="twitter:url" content="{{ canonical }}">
     <meta name="twitter:title" content="Станція {{ station.station }} - розклад руху київської міської електрички">
     <meta name="twitter:description"
           content="Станція {{ station.station }} - детальний та зручний розклад руху міської електрички київським залізничним кільцем">
@@ -34,18 +39,26 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-</head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11164561487">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'AW-11164561487');
-  gtag('event', 'conversion', {'send_to': 'AW-11164561487/IRR6CLz2zZsYEM_g1ssp'});
-</script>
+    <link rel="canonical" href="{{ canonical }}">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11164561487">
+    </script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-DGDRRZZJ2C');
+
+    </script>
+    <script async data-id="101408877" src="//static.getclicky.com/js"></script>
+</head>
 <body>
 <header>
     <h1><a href="/">Розклад міської електрички</a></h1>
@@ -71,6 +84,14 @@
     <a href="/stations/{{ station.slug }}/weekday" class="{{ day == 'weekday' and 'active' }}">Будні</a>
     <a href="/stations/{{ station.slug }}/weekend" class="{{ day == 'weekend' and 'active' }}">Вихідні</a>
 </section>
+<!--<section class="warning">-->
+<!--    <h2>Зміни розкладу</h2>-->
+<!--    <ul>-->
+<!--        <li><b>17 липня</b> не курсуватимуть 3 вечірні рейси через Почайну: 21:31, 22:31 з Дарниці, 21:39 зі Святошина.</li>-->
+<!--        <li><b>18-22 липня</b> – 2 ранкові та 3 вечірні рейси через Почайну: 05:31, 21:31, 22:31 з Дарниці та 05:39, 21:39 зі Святошина.</li>-->
+<!--        <li><b>23 липня</b> – 2 ранкові рейси через Почайну: 05:31 з Дарниці, 05:39 зі Святошина.</li>-->
+<!--    </ul>-->
+<!--</section>-->
 <section>
     <h2 class="other-station">У бік станції <a href="/stations/{{ station.next.slug }}">{{ station.next.station }}</a>
         <span class="icon">
@@ -109,7 +130,7 @@
         {% for ts, badges in station.transfer_details.items() %}
         <div class="transfer-station">
             {% for badge in badges %}
-            <img alt="Пересадка на {{ badge }}" class="transfer-badge" src="/static/{{ badge }}.svg" />
+            <img alt="Пересадка на {{ badge }}" class="transfer-badge" src="/static/{{ badge }}.svg"/>
             {% endfor %}
             <span>{{ ts }}</span>
         </div>
@@ -117,6 +138,14 @@
     </div>
 </section>
 {% endif %}
+<section class="faq mt-3">
+    <h3>Що це за сторінка?</h3>
+    <p>Це актуальний розклад руху київської міської електрички станцією {{ station.station }}{{
+        ' у будні' if day == 'weekday' else (' у вихідні)' if day == 'weekend' else '') }}.
+        Таблиця вище відображає відправлення у бік станцій {{ station.prev.station }} (за годинниковою стрілкою)
+        та {{ station.next.station }} (проти годинникової стрілки). Більше інформації про електричку, купівлю квитків
+        та цей сайт загалом - <a href="/">на головній</a>.</p>
+</section>
 <section class="feedback">
     <p>Як вам розклад? <a href="https://t.me/urbanrail" rel="nofollow">Пишіть сюди</a>, дрібниця, але приємно:)</p>
 </section>
