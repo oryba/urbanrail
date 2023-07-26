@@ -1,5 +1,5 @@
 # UrbanRail
-## Fast and  interactive schedule of the Urban Rail in Kyiv, Ukraine
+## Lightning fast interactive schedule of the Urban Rail in Kyiv, Ukraine
 
  - site: [urbanrail.kyiv.group](https://urbanrail.kyiv.group)
  - API docs: [urbanrail.kyiv.group/docs](https://urbanrail.kyiv.group/docs)
