@@ -1,0 +1,3 @@
+[submodule "templates/news/themes/terminal"]
+	path = templates/news/themes/terminal
+	url = https://github.com/panr/hugo-theme-terminal.git
