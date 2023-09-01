@@ -128,3 +128,9 @@ dmypy.json
 # Pyre type checker
 .pyre/
 /.idea/
+/templates/news/resources/_gen/assets/scss/css/base.scss_52fb9ce76047939ae139d84aaeba4e11.content
+/templates/news/resources/_gen/assets/scss/css/base.scss_52fb9ce76047939ae139d84aaeba4e11.json
+/templates/news/resources/_gen/assets/scss/css/base.scss_997d102b57f87ae4d0d67e2b1aa7754c.content
+/templates/news/resources/_gen/assets/scss/css/base.scss_997d102b57f87ae4d0d67e2b1aa7754c.json
+/templates/news/resources/_gen/assets/scss/news/css/base.scss_997d102b57f87ae4d0d67e2b1aa7754c.content
+/templates/news/resources/_gen/assets/scss/news/css/base.scss_997d102b57f87ae4d0d67e2b1aa7754c.json

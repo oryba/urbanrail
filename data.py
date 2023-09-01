@@ -1,5 +1,6 @@
 import asyncio
 import json
+import os
 from datetime import datetime
 from typing import List, Dict
 
@@ -100,7 +101,8 @@ def cache(seconds=3600):
                 upd_time = datetime.fromisoformat(
                     data['upd_time']
                 ) if isinstance(data, dict) and 'upd_time' in data else None
-                if upd_time and (datetime.now() - upd_time).seconds < seconds:
+                if (upd_time and (datetime.now() - upd_time).total_seconds() < seconds) \
+                        or os.getenv("AUTO_UPDATE") != "true":
                     # return cached data
                     return data['content']
             except Exception as e:
@@ -138,7 +140,7 @@ def process_station_names(tab: BeautifulSoup) -> List[str]:
 
 async def get_schedule_by_url(url: str) -> List[dict]:
     async with httpx.AsyncClient() as client:
-        resp = await client.get(url)
+        resp = await client.get(url, timeout=5)
 
     soup = BeautifulSoup(resp.content, features="html5lib")
     schedule = []
