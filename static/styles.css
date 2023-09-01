@@ -10,7 +10,7 @@ a {
 }
 
 h1 > a {
-   color: #18137b;
+   color: white;
 }
 
 .mt-3 {
@@ -21,13 +21,16 @@ header h1 {
     font-size: clamp(1rem, 6vw, 3rem);
     text-align: center;
     font-weight: 200;
-    color: #18137b;
+    background: #18137b;
+    margin: 0;
+    padding: 0.4em 0;
 }
 
 .header-row {
     display: flex;
     flex-flow: row;
     justify-content: center;
+    margin-top: 1.5em;
 }
 
 .header-arrow {
@@ -59,8 +62,19 @@ header h1 {
 .select-station {
     background: #18137b;
     color: white;
-    padding: 0.5em 1em;
+    border: 1px solid #18137b;
     border-radius: 3em;
+}
+
+.select-station-text {
+    padding: 0 0.3em 0 1em;
+}
+
+.select-station .icon {
+    background: white;
+    border-radius: 100px;
+    color: #18137b;
+    padding: 10px;
 }
 
 .select-station span, .header-station .icon {
@@ -278,10 +292,20 @@ footer {
     padding-inline-start: 1em;
 }
 
-.faq {
+.font-smaller {
+    font-size: clamp(0.8em, 6vw, 1.5rem);
+    line-height: 1.4;
+}
+
+.text-container {
     margin: auto;
     padding: 0 2em;
-    max-width: 70em;
+    max-width: 70rem;
+}
+
+.marker {
+    color: white;
+    background-color: #18137b
 }
 
 .faq h3 {
@@ -306,7 +330,11 @@ footer {
     }
 
     h1 > a {
-        color: #f0eff7;
+        color: black;
+    }
+
+    header h1 {
+        background: #fbd319;
     }
 
     h3.time-window {
@@ -349,5 +377,14 @@ footer {
     .select-station {
         color: #040149;
         background: #fbd319;
+    }
+
+    .select-station .icon {
+        color: black;
+    }
+
+    .marker {
+        color: black;
+        background-color: #fbd319;
     }
 }

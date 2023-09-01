@@ -27,7 +27,8 @@ async def read_item(request: Request):
     :param request: starlette request
     :return: static html
     """
-    return templates.TemplateResponse("index.html", {"request": request})
+    schedule = await get_schedule()
+    return templates.TemplateResponse("index.html", {"request": request, "schedule": schedule})
 
 
 @app.get("/stations", response_class=HTMLResponse, tags=["ssr"])
@@ -79,7 +80,7 @@ async def api_schedule() -> Schedule:
 
 
 app.include_router(api, prefix="/v1")
-app.mount("/", StaticFiles(directory="static/root"), name="root-static")
+app.mount("/", StaticFiles(directory="static/root", html=True), name="root-static")
 
 if __name__ == '__main__':
     import uvicorn

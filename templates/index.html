@@ -24,7 +24,7 @@
           content="Детальний та зручний розклад руху міської електрички київським залізничним кільцем">
     <meta name="twitter:image" content="https://urbanrail.kyiv.group/static/preview.svg">
 
-    <link href="/static/styles.css?v=2" rel="stylesheet">
+    <link href="/static/styles.css?v=2.1" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght,XTRA@8..144,125,600,500&family=Roboto+Mono:ital,wght@0,100;0,200;0,500;0,700;1,100&family=Roboto:wght@100;300;400;500&display=swap"
@@ -39,46 +39,7 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-                {
-                    "@type": "Question",
-                    "name": "Що це за транспорт?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "<p>Міська електричка - швидкісний транспорт, що курсує київським залізничним кільцем. Це зручний та швидкий спосіб дістатися віддаленого району, подорожувати із велосипедом чи просто насолодитися краєвидами.</p>"
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "Розклад? Навіщо?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Електрички курсують регулярно, але не надто часто, тож просто приходити на станцію та чекати потяга \"як у метро\" не найкраща ідея. Що ж, не проблема, поїзди дотримуються розкладу. Обирайте станцію та насолоджуйтеся:)"
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "Яка вартість проїзду?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "<p>Вартість проїзду - 15 грн. Сплатити можна транспортною карткою на станції, готівкою у потязі чи за допомогою телеграм-бота. Майте на увазі, що з транспортної карти зніметься грошовий еквівалент, а не поїздка.</p>"
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "Чи зупиняється електричка на час повітряної тривоги?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "<p>Ні, електричка продовжує курсувати під час повітряної тривоги</p>"
-                    }
-                }
-            ]
-        }
-    </script>
+    {% include 'partial/microdata.html' %}
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11164561487">
@@ -99,8 +60,17 @@
 <body>
 <header>
     <h1><a href="/">Розклад міської електрички</a></h1>
+
+    <div class="text-container font-smaller">
+        <p>
+            Це <span class="marker">зручний, швидкий та актуальний</span> розклад руху київської міської електрички, що оновлюється автоматично. До того ж,
+            розклад <span class="marker">завжди під рукою</span>, бо створений з думкою про смартфони. Приправлено дрібкою турботи про користувачів та їх час&nbsp;❤️
+        </p>
+    </div>
+
     <div class="header-row">
-        <a href="/stations" class="header-station select-station">Виберіть станцію...
+        <a href="/stations" class="header-station select-station">
+            <div class="select-station-text">Виберіть станцію</div>
             <span class="icon">
                 <svg>
                     <use xlink:href="/static/bot.svg#search"></use>
@@ -141,7 +111,7 @@
     </div>
 </section>
 
-<section class="faq">
+<section class="faq text-container">
     <h2 class="other-station">Часті питання</h2>
     <h3>Що це за транспорт?</h3>
     <p>Міська електричка - швидкісний транспорт, що курсує київським залізничним кільцем. Це зручний та швидкий спосіб
@@ -155,6 +125,7 @@
         розкладу
         займає всього два кліки - <a href="/stations">обирайте станцію</a> і побачите потрібний час ще до того, як дощ
         намочить екран смартфону!</p>
+    <p>У нас розклад виглядає просто і зрозуміло: ніяких величезних таблиць і захаращених рекламою сторінок.</p>
     <h3>Що ще мені слід знати перед тим, як йти на станцію?</h3>
     <ul>
         <li>вартість проїзду - 15 грн. Сплатити можна транспортною карткою на станції, готівкою у потязі чи за допомогою
@@ -165,6 +136,18 @@
         </li>
         <li>електричка продовжує курсувати під час повітряної тривоги</li>
     </ul>
+    <h3>Я маю ідеї як зробити сайт кращим, куди звертатися?</h3>
+    <p>
+        У нас є <a href="https://t.me/urbanrail" rel="nofollow">відкрита спільнота</a>, де можна запропонувати покращення чи повідомити про помилку.
+    </p>
+</section>
+
+<section class="text-container">
+    <h2 class="other-station">Оновлення сайту</h2>
+    <p>
+        У нашому <a href="/news">блозі</a> можна почитати про історію створення сайту, оновлення, статистику та, звісно,
+        плани на майбутнє.
+    </p>
 </section>
 
 <section>
