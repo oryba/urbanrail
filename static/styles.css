@@ -17,6 +17,10 @@ h1 > a {
     margin-top: 3em!important;
 }
 
+.font-light {
+    font-weight: 100;
+}
+
 header h1 {
     font-size: clamp(1rem, 6vw, 3rem);
     text-align: center;
@@ -24,6 +28,10 @@ header h1 {
     background: #18137b;
     margin: 0;
     padding: 0.4em 0;
+}
+
+.align-center {
+    text-align: center;
 }
 
 .header-row {
@@ -93,7 +101,7 @@ header h1 {
     display: flex;
 }
 
-span.icon {
+span.icon, .flex-align-center {
     display: flex;
     align-items: center;
 }
@@ -150,7 +158,6 @@ h2.other-station a {
 .station-list {
     width: fit-content;
     margin: auto;
-    text-align: center;
     padding: 10px 0;
 }
 
@@ -180,6 +187,23 @@ h2.station-list-item a {
     width: clamp(1.5rem, 3.5vw, 3rem);
     height: clamp(1.5rem, 3.5vw, 3rem);
     margin: 0 0.2em;
+}
+
+.timeline small {
+    color: #5c5c5c;
+}
+
+.timeline-station img.transfer-badge {
+    width: clamp(1rem, 3vw, 1.7rem);
+    height: clamp(1rem, 3vw, 1.7rem);
+    margin: 0 0.2em;
+}
+
+.timeline .timeline-connector {
+    border: 1px dashed #18137b;
+    width: 0;
+    height: 1.5em;
+    margin: auto;
 }
 
 .transfer-station {
@@ -213,10 +237,13 @@ h3.time-window {
     display: block;
 }
 
-span.time-badge {
+.time-badge-font {
     font-size: clamp(1rem, 3vw, 1.7rem);
     font-family: sans-serif, Roboto;
     font-weight: 400;
+}
+
+.time-badge {
     border-radius: 1em;
     padding: 6px 17px;
     margin: 4px;
@@ -225,12 +252,12 @@ span.time-badge {
     color: #18137b;
 }
 
-span.time-badge.compare-time {
+.time-badge.compare-time {
     background: #18137b;
     color: white;
 }
 
-span.time-badge.past {
+.time-badge.past {
     background: #f0eff7;
     color: #18137b;
 }
