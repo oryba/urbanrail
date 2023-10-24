@@ -80,12 +80,14 @@
             <tr class="time-badge-font">
                 <td class="time-badge">{{ item[1] }}</td>
                 <td class="timeline-station">
-                    <div class="flex-align-center">
-                        {{ st[item[0]].station }}
-                        {% for transfer in st[item[0]].transfers %}
-                        <img alt="Пересадка на {{ transfer }}" class="transfer-badge" src="/static/{{ transfer }}.svg"/>
-                        {% endfor %}
-                    </div>
+                    <a href="/stations/{{ st[item[0]].slug }}">
+                        <div class="flex-align-center">
+                            {{ st[item[0]].station }}
+                            {% for transfer in st[item[0]].transfers %}
+                            <img alt="Пересадка на {{ transfer }}" class="transfer-badge" src="/static/{{ transfer }}.svg"/>
+                            {% endfor %}
+                        </div>
+                    </a>
                 </td>
             </tr>
             {% endfor %}

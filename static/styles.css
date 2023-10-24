@@ -191,12 +191,25 @@ h2.station-list-item a {
 
 .timeline small {
     color: #5c5c5c;
+    margin-left: 12px;
 }
 
 .timeline-station img.transfer-badge {
     width: clamp(1rem, 3vw, 1.7rem);
     height: clamp(1rem, 3vw, 1.7rem);
     margin: 0 0.2em;
+}
+
+.timeline-station a {
+    color: #18137b;
+    border-radius: 1em;
+    padding: 6px 12px;
+    display: inline-block;
+}
+
+.timeline-station a:hover {
+    background: #18137b;
+    color: white;
 }
 
 .timeline .timeline-connector {
