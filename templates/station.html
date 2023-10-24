@@ -26,24 +26,13 @@
           content="Станція {{ station.station }} - детальний та зручний розклад руху міської електрички київським залізничним кільцем">
     <meta name="twitter:image" content="https://urbanrail.kyiv.group/static/preview.svg">
 
-    <link href="/static/styles.css?v=2.2" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght,XTRA@8..144,125,600,500&family=Roboto+Mono:ital,wght@0,100;0,200;0,500;0,700;1,100&family=Roboto:wght@100;300;400;500&display=swap"
-          rel="stylesheet">
-
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
+    {% include 'partial/links.html' %}
 
     <link rel="canonical" href="{{ canonical }}">
 
     {% include 'partial/microdata.html' %}
 
+    <script async data-id="101408877" src="//static.getclicky.com/js"></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11164561487">
     </script>
@@ -59,7 +48,6 @@
         gtag('config', 'G-DGDRRZZJ2C');
 
     </script>
-    <script async data-id="101408877" src="//static.getclicky.com/js"></script>
 </head>
 <body>
 <header>
@@ -87,11 +75,14 @@
     <a href="/stations/{{ station.slug }}/weekend" class="{{ day == 'weekend' and 'active' }}">Вихідні</a>
 </section>
 <!--<section class="warning">-->
-<!--    <h2>Зміни розкладу 15, 16, 22, 23 серпня:</h2>-->
+<!--    <h2>Зміни розкладу – на час ремонту скасовано наступні рейси:</h2>-->
 <!--    <ul>-->
-<!--        <li>У напрямку <b>Дарниця – Почайна</b> не курсуватимуть 5 рейсів: 10:39, 11:39, 12:39, 13:39, 14:39 з Дарниці.</li>-->
-<!--        <li>У напрямку <b>Почайна – Дарниця</b> не курсуватимуть 5 рейсів: 10:39, 11:39, 12:39, 13:39, 14:39 з Почайної.</li>-->
+<!--        <li><b>11 вересня:</b> зі станції Дарниця о <b>21:31, 22:31</b> через Почайну, зі станції Святошин о <b>21:39</b> через Почайну</li>-->
+<!--        <li><b>12-14 вересня:</b> зі станції Дарниця о <b>5:31, 21:31, 22:31</b> через Почайну, зі станції Святошин о <b>5:39, 21:39</b> через Почайну</li>-->
+<!--        <li><b>15 вересня:</b> зі станції Дарниця о <b>5:31</b> через Почайну, зі станції Святошин о <b>5:39</b> через Почайну</li>-->
 <!--    </ul>-->
+<!--    <i>Зауважте, що зміни ніяк не торкаються рейсів на південному півкільці між Дарницею та Святошиним через центральний вокзал.</i>-->
+<!--    <br>-->
 <!--</section>-->
 <section>
     <h2 class="other-station">У бік станції <a href="/stations/{{ station.next.slug }}">{{ station.next.station }}</a>
@@ -104,7 +95,7 @@
     <h3 class="time-window">з {{ station.departures_forth[0].time }} до {{ station.departures_forth[-1].time }}</h3>
     <div class="station-departures">
         {% for item in station.departures_forth %}
-        <span class="time-badge {{not day and 'compare-time'}} {{ 'past' if not day and item.time < time else 'future' }}">{{ item.time }}</span>
+        <span class="time-badge time-badge-font {{not day and 'compare-time'}} {{ 'past' if not day and item.time < time else 'future' }}">{{ item.time }}</span>
         {% endfor %}
     </div>
 </section>
@@ -119,7 +110,7 @@
     <h3 class="time-window">з {{ station.departures_back[0].time }} до {{ station.departures_back[-1].time }}</h3>
     <div class="station-departures">
         {% for item in station.departures_back %}
-        <span class="time-badge {{not day and 'compare-time'}} {{ 'past' if not day and item.time < time else 'future' }}">{{ item.time }}</span>
+        <span class="time-badge time-badge-font {{not day and 'compare-time'}} {{ 'past' if not day and item.time < time else 'future' }}">{{ item.time }}</span>
         {% endfor %}
     </div>
 </section>
@@ -147,8 +138,8 @@
         та {{ station.next.station }} (проти годинникової стрілки). Більше інформації про електричку, купівлю квитків
         та цей сайт загалом - <a href="/">на головній</a>.</p>
 </section>
-<section class="feedback">
-    <p>Як вам розклад? <a href="https://t.me/urbanrail" rel="nofollow">Пишіть сюди</a>, дрібниця, але приємно:)</p>
-</section>
+
+{% include 'partial/feedback.html' %}
+
 </body>
 </html>
