@@ -95,7 +95,7 @@
     <h3 class="time-window">з {{ station.departures_forth[0].time }} до {{ station.departures_forth[-1].time }}</h3>
     <div class="station-departures">
         {% for item in station.departures_forth %}
-        <span class="time-badge time-badge-font {{not day and 'compare-time'}} {{ 'past' if not day and item.time < time else 'future' }}">{{ item.time }}</span>
+        <a href="/trains/{{ item.code | replace('/', '-')}}" class="time-badge time-badge-font {{not day and 'compare-time'}} {{ 'past' if not day and item.time < time else 'future' }}">{{ item.time }}</a>
         {% endfor %}
     </div>
 </section>
@@ -110,7 +110,7 @@
     <h3 class="time-window">з {{ station.departures_back[0].time }} до {{ station.departures_back[-1].time }}</h3>
     <div class="station-departures">
         {% for item in station.departures_back %}
-        <span class="time-badge time-badge-font {{not day and 'compare-time'}} {{ 'past' if not day and item.time < time else 'future' }}">{{ item.time }}</span>
+        <a href="/trains/{{ item.code | replace('/', '-')}}" class="time-badge time-badge-font {{not day and 'compare-time'}} {{ 'past' if not day and item.time < time else 'future' }}">{{ item.time }}</a>
         {% endfor %}
     </div>
 </section>
