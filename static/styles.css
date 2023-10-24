@@ -17,8 +17,10 @@ h1 > a {
     margin-top: 3em!important;
 }
 
-.font-light {
-    font-weight: 100;
+.font-medium {
+    font-size: clamp(1rem, 4.5vw, 2rem);
+    font-family: sans-serif, Roboto;
+    font-weight: 400;
 }
 
 header h1 {
@@ -187,6 +189,10 @@ h2.station-list-item a {
     width: clamp(1.5rem, 3.5vw, 3rem);
     height: clamp(1.5rem, 3.5vw, 3rem);
     margin: 0 0.2em;
+}
+
+.timeline {
+    padding: 10px 25px;
 }
 
 .timeline small {
