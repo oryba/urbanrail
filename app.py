@@ -2,7 +2,7 @@ import os
 
 from urllib.parse import urljoin
 from datetime import datetime
-from typing import Optional, List
+from typing import Optional
 
 import pytz
 from fastapi import FastAPI, Request, status, APIRouter
@@ -10,7 +10,7 @@ from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
-from data import get_schedule, ScheduleItem, Schedule
+from data import get_schedule, Schedule, get_trains
 
 app = FastAPI()
 
@@ -69,6 +69,24 @@ async def read_item(request: Request, slug: str, day: Optional[str] = None):
     return templates.TemplateResponse("station.html", {
         "request": request, "schedule": schedule, "station": station, "time": time, "day": day,
         "canonical": urljoin(BASE_URL, request.scope.get('path', ''))})
+
+
+@app.get("/trains/{code}", response_class=HTMLResponse, tags=["ssr"])
+async def read_item(request: Request, code: str):
+    """
+    Render train departures by code
+    :param request: starlette request
+    :param code: train code
+    :return: static html
+    """
+    code = code.replace('-', '/')
+    schedule = await get_schedule()
+    trains = await get_trains(schedule)
+    if not trains.get(code):
+        raise status.HTTP_404_NOT_FOUND
+    station_data = {s['slug']: s for s in schedule}
+    return templates.TemplateResponse(
+        "train.html", {"request": request, "st": station_data, "train": trains[code], "code": code})
 
 
 api = APIRouter()

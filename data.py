@@ -3,6 +3,7 @@ import json
 import os
 from datetime import datetime
 from typing import List, Dict
+from collections import defaultdict
 
 import httpx
 from bs4 import BeautifulSoup
@@ -91,12 +92,12 @@ TRANSFERS = {
 TRANSFERS_BADGES = {k: sum([i for i in v.values()], []) for k, v in TRANSFERS.items()}
 
 
-def cache(seconds=3600):
+def cache(seconds=3600, name='schedule.json'):
     def wrap(func):
-        async def _cached():
+        async def _cached(*args, **kwargs):
             data = None
             try:
-                with open("cache.json", "r") as f:
+                with open(name, "r") as f:
                     data = json.load(f)
                 upd_time = datetime.fromisoformat(
                     data['upd_time']
@@ -109,7 +110,7 @@ def cache(seconds=3600):
                 print("Caching error: ", e)
 
             try:
-                schedule = await func()
+                res = await func(*args, **kwargs)
             except Exception as e:
                 print("Error getting the actual schedule: ", e)
                 if data:
@@ -117,14 +118,14 @@ def cache(seconds=3600):
                 else:
                     raise e
 
-            with open("cache.json", "w") as f:
+            with open(name, "w") as f:
                 json.dump({
-                    'content': schedule,
+                    'content': res,
                     'upd_time': datetime.now().isoformat()
                 }, f, indent=4)
 
-            print("Schedule cache updated successfully")
-            return schedule
+            print(f"Cache for {name} updated successfully")
+            return res
 
         return _cached
 
@@ -242,6 +243,56 @@ async def get_schedule() -> List[dict]:
         station['transfer_details'] = TRANSFERS.get(station['slug'], [])
 
     return schedule
+
+
+def generate_departures(station):
+    for train in station['departures_forth']:
+        yield train, 'forth'
+    for train in station['departures_back']:
+        yield train, 'back'
+
+
+def dep_to_min(dep_time: str):
+    hours, minutes = dep_time.split(':')
+    return int(hours) * 60 + int(minutes)
+
+
+def pluralize_int(i: int, singular, plu1, plu2) -> str:
+    s = str(i)
+    if len(s) >= 2 and s[-2] == '1':
+        return s + " " + plu2
+    elif s[-1] == '1':
+        return s + " " + singular
+    elif s[-1] in ['0', '2', '3', '4']:
+        return s + " " + plu1
+    return s + " " + plu2
+
+
+@cache(seconds=86400, name='trains.json')
+async def get_trains(schedule: List[Dict]) -> Dict:
+    trains = defaultdict(lambda: {'schedule': '', 'direction': '', 'departures': []})
+    for station in schedule:
+        for train, direction in generate_departures(station):
+            obj = trains[train['code']]
+            obj['schedule'] = train['schedule']
+            obj['direction'] = direction
+            obj['departures'].append(
+                (station['slug'], train['time'])
+            )
+    for train, td in trains.items():
+        deps = list(sorted(td['departures'], key=lambda x: x[1]))  # sort by departure date
+        intervals = [
+            pluralize_int(
+                dep_to_min(b[1]) - dep_to_min(a[1]),
+                "хвилина",
+                "хвилини",
+                "хвилин"
+            )
+            for a, b in zip(deps, deps[1:])
+        ]
+        # TODO: make Jinja2 filter
+        td['departures'] = [(el[0], el[1], diff) for el, diff in list(zip(deps, [""] + intervals))]
+    return trains
 
 
 if __name__ == '__main__':

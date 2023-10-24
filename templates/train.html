@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="color-scheme" content="light dark">
+    <title>Потяг {{ code }} - розклад київської міської електрички</title>
+
+    <meta property="og:title" content="Потяг {{ code }} - розклад київської міської електрички"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://urbanrail.kyiv.group/trains/{{ code | replace('/', '-') }}"/>
+    <meta property="og:image" content="https://urbanrail.kyiv.group/static/preview.svg"/>
+    <meta property="og:description" content="Розклад поїзда {{ code }} курсує київським залізничним кільцем {{'щоденно' if train.schedule == 'daily' else 'у вихідні'}} з {{ train.departures[0][1] }} по {{ train.departures[-1][1] }}"/>
+    <meta property="description" content="Розклад поїзда {{ code }} курсує київським залізничним кільцем {{'щоденно' if train.schedule == 'daily' else 'у вихідні'}} з {{ train.departures[0][1] }} по {{ train.departures[-1][1] }}"/>
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="urbanrail.kyiv.group">
+    <meta property="twitter:url" content="https://urbanrail.kyiv.group/trains/{{ code | replace('/', '-') }}">
+    <meta name="twitter:title" content="Потяг {{ code }} - розклад київської міської електрички">
+    <meta name="twitter:description"
+          content="Розклад поїзда {{ code }} курсує київським залізничним кільцем {{'щоденно' if train.schedule == 'daily' else 'у вихідні'}} з {{ train.departures[0][1] }} по {{ train.departures[-1][1] }}">
+    <meta name="twitter:image" content="https://urbanrail.kyiv.group/static/preview.svg">
+
+    {% include 'partial/links.html' %}
+
+    {% include 'partial/microdata.html' %}
+
+    <script async data-id="101408877" src="//static.getclicky.com/js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11164561487">
+    </script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-DGDRRZZJ2C');
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11164561487"></script>
+</head>
+<body>
+<header>
+    <h1><a href="/">Розклад міської електрички</a></h1>
+    <div class="header-row">
+        <div class="header-arrow"></div>
+        <div class="header-arrow-left"></div>
+        <div class="header-station">
+            <span>Потяг <span style="color: #d44600">{{ code }}</span></span>
+            <span class="icon">
+                <svg>
+                    <use xlink:href="/static/bot.svg#{{ 'clockwise' if train.direction == 'back' else 'counterclockwise'}}"></use>
+                </svg>
+            </span>
+        </div>
+        <div class="header-arrow-right"></div>
+        <div class="header-arrow"></div>
+    </div>
+</header>
+<section>
+    <div class="station-list timeline">
+        <h2 class="font-light">Курсує {{'щоденно' if train.schedule == 'daily' else 'у вихідні'}} {{ 'за годинниковою стрілкою' if train.direction == 'back' else 'проти годинникової стрілки'}} з {{ train.departures[0][1] }} по {{ train.departures[-1][1] }}</h2>
+        <h2>Розклад відправлень:</h2>
+        <table>
+            {% for item in train.departures %}
+            {% if not loop.first %}
+            <tr>
+                <td>
+                    <div class="timeline-connector"></div>
+                </td>
+                <td><small>{{ item[2] }}</small>
+                </td>
+                <td></td>
+            </tr>
+            {% endif %}
+            <tr class="time-badge-font">
+                <td class="time-badge">{{ item[1] }}</td>
+                <td class="timeline-station">
+                    <div class="flex-align-center">
+                        {{ st[item[0]].station }}
+                        {% for transfer in st[item[0]].transfers %}
+                        <img alt="Пересадка на {{ transfer }}" class="transfer-badge" src="/static/{{ transfer }}.svg"/>
+                        {% endfor %}
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</section>
+
+{% include 'partial/feedback.html' %}
+
+</body>
+</html>
