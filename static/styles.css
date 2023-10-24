@@ -26,7 +26,7 @@ h1 > a {
 header h1 {
     font-size: clamp(1rem, 6vw, 3rem);
     text-align: center;
-    font-weight: 200;
+    font-weight: 400;
     background: #18137b;
     margin: 0;
     padding: 0.4em 0;
@@ -433,5 +433,17 @@ footer {
     .marker {
         color: black;
         background-color: #fbd319;
+    }
+
+    .timeline small {
+        color: #d2d2d2;
+    }
+
+    .timeline .timeline-station a {
+        color: #f0eff7;
+    }
+
+    .timeline .timeline-connector {
+        border: 1px dashed #f0eff7;
     }
 }
