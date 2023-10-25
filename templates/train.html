@@ -11,7 +11,7 @@
     <meta property="og:url" content="https://urbanrail.kyiv.group/trains/{{ code | replace('/', '-') }}"/>
     <meta property="og:image" content="https://urbanrail.kyiv.group/static/preview.svg"/>
     <meta property="og:description" content="Розклад поїзда {{ code }}, що курсує київським залізничним кільцем {{'щоденно' if train.schedule == 'daily' else 'у будні'}} з {{ train.departures[0][1] }} по {{ train.departures[-1][1] }}"/>
-    <meta property="description" content="Розклад поїзда {{ code }}, що курсує київським залізничним кільцем {{'щоденно' if train.schedule == 'daily' else 'у будні'}} з {{ train.departures[0][1] }} по {{ train.departures[-1][1] }}"/>
+    <meta name="description" content="Розклад поїзда {{ code }}, що курсує київським залізничним кільцем {{'щоденно' if train.schedule == 'daily' else 'у будні'}} з {{ train.departures[0][1] }} по {{ train.departures[-1][1] }}"/>
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
