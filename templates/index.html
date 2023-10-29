@@ -142,6 +142,41 @@
     </div>
 </section>
 
+<section class="text-container">
+    <div itemscope itemtype="https://schema.org/ItemList">
+        <h2 class="other-station" itemprop="name">Розклад за станціями</h2>
+        <p>
+            Міська електричка курсує двадцятьма станціями Київського залізничного кільця. Загальна протяжність маршруту - 50.8 км.
+            Натисніть на назву станції, щоб подивитися розклад відправлень потягів.
+        </p>
+        <ol>
+            {% for item in schedule %}
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <a itemprop="url" href="https://urbanrail.kyiv.group/stations/{{ item.slug }}">
+                    <span itemprop="name">{{ item.station }}</span></a>
+                <meta itemprop="position" content="{{ loop.index }}"/>
+            </li>
+            {% endfor %}
+        </ol>
+    </div>
+
+<!--<script type="application/ld+json">-->
+<!--    {-->
+<!--        "@context": "https://schema.org",-->
+<!--        "@type": "ItemList",-->
+<!--        "itemListElement": [-->
+<!--            {% for item in schedule %}-->
+<!--                {-->
+<!--                    "@type": "ListItem",-->
+<!--                    "position": {{ loop.index }},-->
+<!--                    "url": "https://urbanrail.kyiv.group/stations/{{ item.slug }}"-->
+<!--                }{% if not loop.last %}, {% endif %}-->
+<!--            {% endfor %}-->
+<!--        ]-->
+<!--    }-->
+<!--</script>-->
+</section>
+
 {% include 'partial/feedback.html' %}
 
 <footer>
