@@ -13,6 +13,8 @@
     <meta property="og:description" content="Розклад поїзда {{ code }}, що курсує київським залізничним кільцем {{'щоденно' if train.schedule == 'daily' else 'у будні'}} з {{ train.departures[0][1] }} по {{ train.departures[-1][1] }}"/>
     <meta name="description" content="Розклад поїзда {{ code }}, що курсує київським залізничним кільцем {{'щоденно' if train.schedule == 'daily' else 'у будні'}} з {{ train.departures[0][1] }} по {{ train.departures[-1][1] }}"/>
 
+    <link rel="canonical" href="https://urbanrail.kyiv.group/trains/{{ code | replace('/', '-') }}" />
+
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta property="twitter:domain" content="urbanrail.kyiv.group">
