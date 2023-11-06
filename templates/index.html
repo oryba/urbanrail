@@ -101,8 +101,11 @@
         марних спроб зʼясувати, о котрій відправляється найближчий потяг у -10℃ та сніг. Подорож з цієї сторінки до
         розкладу
         займає всього два кліки - <a href="/stations">обирайте станцію</a> і побачите потрібний час ще до того, як дощ
-        намочить екран смартфону!</p>
+        намочить екран смартфону!
+    </p>
     <p>У нас розклад виглядає просто і зрозуміло: ніяких величезних таблиць і захаращених рекламою сторінок.</p>
+    <p> А тут <a href="https://kyiv.group/">домашня сторінка групи проектів</a>, яка поки що
+        складається лише з цього розкладу:)</p>
     <h3>Що ще мені слід знати перед тим, як йти на станцію?</h3>
     <ul>
         <li>вартість проїзду - 15 грн. Сплатити можна транспортною карткою на станції, готівкою у потязі чи за допомогою
@@ -147,21 +150,43 @@
 </section>
 
 <section class="text-container">
-    <div itemscope itemtype="https://schema.org/ItemList">
-        <h2 class="other-station" itemprop="name">Розклад за станціями</h2>
-        <p>
-            Міська електричка курсує двадцятьма станціями Київського залізничного кільця. Загальна протяжність маршруту - 50.8 км.
-            Натисніть на назву станції, щоб подивитися розклад відправлень потягів.
-        </p>
-        <ol>
+    <h2 class="other-station" itemprop="name">Розклад за станціями</h2>
+    <p>
+        Міська електричка курсує двадцятьма станціями Київського залізничного кільця. Загальна протяжність маршруту –
+        50.8 км. Поїзди рухаються <b>за годинниковою стрілкою</b> (Дарниця – Київ-Пас. – Святошин – Почайна) та <b>проти</b>
+        (Дарниця – Почайна – Святошин – Київ-Пас.). Інтервал складає близько 15 хвилин у години пік по буднях та близько
+        30 хвилин у інший час з 5:30 до 23:20.
+    </p>
+    <h3 class="align-center">Натисніть на станцію, щоб побачити розклад</h3>
+    <div class="station-list timeline">
+        <table itemscope itemtype="https://schema.org/ItemList">
             {% for item in schedule %}
-            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                <a itemprop="url" href="https://urbanrail.kyiv.group/stations/{{ item.slug }}">
-                    <span itemprop="name">{{ item.station }}</span></a>
-                <meta itemprop="position" content="{{ loop.index }}"/>
-            </li>
+            {% if not loop.first %}
+            <tr>
+                <td>
+                    <div class="timeline-connector"></div>
+                </td>
+                <td></td>
+            </tr>
+            {% endif %}
+            <tr class="time-badge-font" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <td class="time-badge" style="text-align: center; display: table-cell" itemprop="position">
+                    {{ loop.index }}
+                </td>
+                <td class="timeline-station">
+                    <a href="/stations/{{ item.slug }}" itemprop="url">
+                        <div class="flex-align-center">
+                            <span itemprop="name">{{ item.station }}</span>
+                            {% for transfer in item.transfers %}
+                            <img alt="Пересадка на {{ transfer }}" class="transfer-badge"
+                                 src="/static/{{ transfer }}.svg"/>
+                            {% endfor %}
+                        </div>
+                    </a>
+                </td>
+            </tr>
             {% endfor %}
-        </ol>
+        </table>
     </div>
 </section>
 
