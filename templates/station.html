@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="color-scheme" content="light dark">
     <title>{{ station.station }}{{ ' (будні)' if day == 'weekday' else (' (вихідні)' if day == 'weekend' else '') }} -
-        розклад руху київської міської електрички</title>
+        розклад київської міської електрички</title>
 
     <meta property="og:title"
-          content="Станція {{ station.station }} - актуальний розклад руху київської міської електрички"/>
+          content="Станція {{ station.station }} - актуальний розклад київської міської електрички"/>
     <meta property="og:description"
           content="Станція {{ station.station }} - актуальний та зручний розклад руху міської електрички станцією {{ station.station }} {{ 'у будні' if day == 'weekday' else ('у вихідні' if day == 'weekend' else '') }}"/>
     <meta name="description"
@@ -21,7 +21,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta property="twitter:domain" content="urbanrail.kyiv.group">
     <meta property="twitter:url" content="{{ canonical }}">
-    <meta name="twitter:title" content="Станція {{ station.station }} - розклад руху київської міської електрички">
+    <meta name="twitter:title" content="Станція {{ station.station }} - розклад київської міської електрички">
     <meta name="twitter:description"
           content="Станція {{ station.station }} - детальний та зручний розклад руху міської електрички київським залізничним кільцем">
     <meta name="twitter:image" content="https://urbanrail.kyiv.group/static/preview.svg">
@@ -118,7 +118,7 @@
 {% endif %}
 <section class="faq text-container mt-3">
     <h3>Що це за сторінка?</h3>
-    <p>Це актуальний розклад руху київської міської електрички станцією {{ station.station }}{{
+    <p>Це актуальний розклад київської міської електрички станцією {{ station.station }}{{
         ' у будні' if day == 'weekday' else (' у вихідні)' if day == 'weekend' else '') }}.
         Таблиця вище відображає відправлення у бік станцій {{ station.prev.station }} (за годинниковою стрілкою)
         та {{ station.next.station }} (проти годинникової стрілки). Більше інформації про електричку, купівлю квитків
