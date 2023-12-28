@@ -324,17 +324,26 @@ footer {
     color: unset;
 }
 
-.warning {
+.prompt {
     color: #18137b;
-    border-top: 4px solid orange;
-    border-bottom: 4px solid orange;
-    background: #fff8ed;
     margin: auto;
     padding: 0.1em 2em;
     max-width: 70em;
 }
 
-.warning ul {
+.prompt.warning {
+    border-top: 4px solid orange;
+    border-bottom: 4px solid orange;
+    background: #fff8ed;
+}
+
+.prompt.info {
+    background: #edfeff;
+    border-top: 4px solid #6cf1ff;
+    border-bottom: 4px solid #6cf1ff;
+}
+
+.prompt ul {
     padding-inline-start: 1em;
 }
 
