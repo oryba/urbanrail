@@ -78,12 +78,16 @@ async def read_item(request: Request, slug: str, day: Optional[str] = None):
     time = f"{now.hour:02d}:{now.minute:02d}"
     station['next'] = schedule[(idx + 1) % len(schedule)]
     station['prev'] = schedule[idx - 1]
-    if day == 'weekend' or (day is None and now.weekday() >= 5):
+    if day is None:
+        detected_day = 'weekend' if now.weekday() >= 5 else 'weekday'
+    else:
+        detected_day = day
+    if detected_day == 'weekend':
         station['departures_forth'] = [s for s in station['departures_forth'] if s['schedule'] == 'daily']
         station['departures_back'] = [s for s in station['departures_back'] if s['schedule'] == 'daily']
     return templates.TemplateResponse("station.html", {
         "request": request, "schedule": schedule, "station": station, "time": time, "day": day,
-        "canonical": urljoin(BASE_URL, request.scope.get('path', ''))})
+        "detected_day": detected_day, "canonical": urljoin(BASE_URL, request.scope.get('path', ''))})
 
 
 @app.get("/trains/{code}", response_class=HTMLResponse, tags=["ssr"])

@@ -97,6 +97,14 @@ header h1 {
     display: flex;
 }
 
+.header-station > a > h2 {
+    display: inline;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    margin: 0;
+}
+
 .icon {
     font-size: inherit;
     vertical-align: bottom;
@@ -248,6 +256,11 @@ h3.time-window {
     margin-top: 0.1em;
 }
 
+h3.old-name {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
 .station-departures {
     text-align: center;
     width: 90%;
@@ -269,6 +282,12 @@ h3.time-window {
     display: inline-block;
     background: #f0eff7;
     color: #18137b;
+}
+
+.time-badge.badge-crossed {
+    color: #ff5e5e!important;
+    text-decoration: line-through!important;
+    background: #f0eff7!important;
 }
 
 .time-badge.compare-time {
@@ -326,7 +345,7 @@ footer {
 
 .prompt {
     color: #18137b;
-    margin: auto;
+    margin: 0.8em auto 0;
     padding: 0.1em 2em;
     max-width: 70em;
 }
@@ -341,6 +360,14 @@ footer {
     background: #edfeff;
     border-top: 4px solid #6cf1ff;
     border-bottom: 4px solid #6cf1ff;
+}
+
+.prompt h2 {
+    font-size: clamp(1rem, 5vw, 1.5rem);
+}
+
+.prompt p {
+    margin-top: 0;
 }
 
 .prompt ul {

@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="color-scheme" content="light dark">
-    <title>{{ station.station }}{{ ' (будні)' if day == 'weekday' else (' (вихідні)' if day == 'weekend' else '') }} -
+    <title>{{ station.station_seo }}{{ ' (будні)' if day == 'weekday' else (' (вихідні)' if day == 'weekend' else '') }} -
         розклад київської міської електрички</title>
 
     <meta property="og:title"
-          content="Станція {{ station.station }} - актуальний розклад київської міської електрички"/>
+          content="Станція {{ station.station_seo }} - актуальний розклад київської міської електрички"/>
     <meta property="og:description"
-          content="Станція {{ station.station }} - актуальний та зручний розклад руху міської електрички станцією {{ station.station }} {{ 'у будні' if day == 'weekday' else ('у вихідні' if day == 'weekend' else '') }}"/>
+          content="Станція {{ station.station_seo }} - актуальний та зручний розклад руху міської електрички станцією {{ station.station }} {{ 'у будні' if day == 'weekday' else ('у вихідні' if day == 'weekend' else '') }}"/>
     <meta name="description"
-          content="Станція {{ station.station }} - актуальний та зручний розклад руху міської електрички станцією {{ station.station }} {{ 'у будні' if day == 'weekday' else ('у вихідні' if day == 'weekend' else '') }}">
+          content="Станція {{ station.station_seo }} - актуальний та зручний розклад руху міської електрички станцією {{ station.station }} {{ 'у будні' if day == 'weekday' else ('у вихідні' if day == 'weekend' else '') }}">
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="{{ canonical }}"/>
     <meta property="og:image" content="https://urbanrail.kyiv.group/static/preview.svg"/>
@@ -21,9 +21,9 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta property="twitter:domain" content="urbanrail.kyiv.group">
     <meta property="twitter:url" content="{{ canonical }}">
-    <meta name="twitter:title" content="Станція {{ station.station }} - розклад київської міської електрички">
+    <meta name="twitter:title" content="Станція {{ station.station_seo }} - розклад київської міської електрички">
     <meta name="twitter:description"
-          content="Станція {{ station.station }} - детальний та зручний розклад руху міської електрички київським залізничним кільцем">
+          content="Станція {{ station.station_seo }} - детальний та зручний розклад руху міської електрички київським залізничним кільцем">
     <meta name="twitter:image" content="https://urbanrail.kyiv.group/static/preview.svg">
 
     {% include 'partial/links.html' %}
@@ -43,7 +43,7 @@
         <div class="header-arrow-left"></div>
         <div class="header-station">
             <a href="/stations">
-                {{ station.station }}
+                <h2>{{ station.station }}</h2>
                 <span class="icon">
                     <svg>
                         <use xlink:href="/static/bot.svg#search"></use>
@@ -54,24 +54,28 @@
         <div class="header-arrow-right"></div>
         <div class="header-arrow"></div>
     </div>
+    {% if station.old_name %}
+    <h3 class="time-window old-name">стара назва: {{ station.old_name }}</h3>
+    {% endif %}
 </header>
 <section class="select-day">
     <a href="/stations/{{ station.slug }}" class="{{ not day and 'active' }}">Сьогодні</a>
     <a href="/stations/{{ station.slug }}/weekday" class="{{ day == 'weekday' and 'active' }}">Будні</a>
     <a href="/stations/{{ station.slug }}/weekend" class="{{ day == 'weekend' and 'active' }}">Вихідні</a>
 </section>
-<!--<section class="prompt warning">-->
-<!--    <h2>Зміни розкладу – без заїзду до станції Святошин прямуватимуть:</h2>-->
-<!--    <ul>-->
-<!--        <li><b>при відправленні з Борщагівки</b> – 09:02, 09:32, 10:02, 10:32, 11:32, 12:32, 13:32, 14:32, 15:32, 16:02, 16:32</li>-->
-<!--        <li><b>при відправленні з Дарниці</b> – 08:31, 09:01, 09:31, 10:01, 10:31, 11:31, 12:31, 13:31, 14:31, 15:31, 16:31, 17:01, 17:31</li>-->
-<!--    </ul>-->
-<!--    <br>-->
-<!--</section>-->
-<section class="prompt info">
-    <h2>🎄 Знижка 50% для власників карток Visa</h2>
-    <p>Знижка діє при оплаті через Київ Цифровий або банківською карткою через валідатор із 28 грудня 2023 року до 31 січня 2024 року</p>
+<section class="prompt warning">
+    <h2>Зміни розкладу до 12 серпня – будівництво тунелю для зʼїзду з мосту:</h2>
+    <ul>
+        <li><b>будні</b> – "пікові" щопівгодинні рейси Дарниця – Почайна – Святошин скасовано</li>
+        <li><b>вихідні</b> – рух ділянкою Почайна – Микільська Слобідка не здійснюватиметься, станції Райдужна та Воскресенка не працюватимуть</li>
+    </ul>
+    <p>Скасовані рейси у розкладі виділено перекресленими червоними позначками. У разі виявлення помилок, будь ласка, пишіть у <a href="https://t.me/urbanrail" rel="nofollow">телеграм-канал</a>, виправимо.</p>
+    <br>
 </section>
+<!--<section class="prompt info">-->
+<!--    <h2>🎄 Знижка 50% для власників карток Visa</h2>-->
+<!--    <p>Діє при оплаті карткою через валідатор та Київ Цифровий із 28 грудня 2023 року до 31 січня 2024 року</p>-->
+<!--</section>-->
 <section>
     <h2 class="other-station">У бік станції <a href="/stations/{{ station.next.slug }}">{{ station.next.station }}</a>
         <span class="icon">
@@ -83,7 +87,12 @@
     <h3 class="time-window">з {{ station.departures_forth[0].time }} до {{ station.departures_forth[-1].time }}</h3>
     <div class="station-departures">
         {% for item in station.departures_forth %}
-        <a href="/trains/{{ item.code | replace('/', '-')}}" class="time-badge time-badge-font {{not day and 'compare-time'}} {{ 'past' if not day and item.time < time else 'future' }}">{{ item.time }}</a>
+        <a
+            href="/trains/{{ item.code | replace('/', '-')}}"
+            class="time-badge time-badge-font {{not day and 'compare-time'}} {{ 'past' if not day and item.time < time else 'future' }} {{ 'badge-crossed' if item.removed and detected_day in item.removed.when else ''}}"
+        >
+            {{ item.time }}
+        </a>
         {% endfor %}
     </div>
 </section>
@@ -98,7 +107,12 @@
     <h3 class="time-window">з {{ station.departures_back[0].time }} до {{ station.departures_back[-1].time }}</h3>
     <div class="station-departures">
         {% for item in station.departures_back %}
-        <a href="/trains/{{ item.code | replace('/', '-')}}" class="time-badge time-badge-font {{not day and 'compare-time'}} {{ 'past' if not day and item.time < time else 'future' }}">{{ item.time }}</a>
+        <a
+            href="/trains/{{ item.code | replace('/', '-')}}"
+            class="time-badge time-badge-font {{not day and 'compare-time'}} {{ 'past' if not day and item.time < time else 'future' }} {{ 'badge-crossed' if item.removed and detected_day in item.removed.when else ''}}"
+        >
+            {{ item.time }}
+        </a>
         {% endfor %}
     </div>
 </section>
@@ -120,7 +134,7 @@
 {% endif %}
 <section class="faq text-container mt-3">
     <h3>Що це за сторінка?</h3>
-    <p>Це актуальний розклад київської міської електрички станцією {{ station.station }}{{
+    <p>Це актуальний розклад київської міської електрички станцією {{ station.station_seo }}{{
         ' у будні' if day == 'weekday' else (' у вихідні)' if day == 'weekend' else '') }}.
         Таблиця вище відображає відправлення у бік станцій {{ station.prev.station }} (за годинниковою стрілкою)
         та {{ station.next.station }} (проти годинникової стрілки). Більше інформації про електричку, купівлю квитків

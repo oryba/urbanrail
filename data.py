@@ -15,6 +15,47 @@ URLS_SCHEDULE = [
     "https://swrailway.gov.ua/timetable/eltrain/?gid=1&rid=480",
 ]
 
+REMOVE_TRAINS_WEEKDAY = {
+    "darnitsia": {
+        "departures_forth": {
+            "schedule": "weekday"
+        }
+    },
+    **{
+        slug: {
+            "departures_forth": {
+                "schedule": "weekday"
+            },
+            "departures_back": {
+                "schedule": "weekday"
+            }
+        } for slug in [
+            "rusanivka", "livoberezhna", "mikilska-slobidka", "voskresenka", "raiduzhnyi", "pochaina",
+            "kurenivka", "priorka", "sirets", "beresteiska"
+        ]
+    },
+    "sviatoshin": {
+        "departures_back": {
+            "schedule": "weekday"
+        }
+    }
+}
+
+REMOVE_TRAINS_WEEKEND = {
+    "mikilska-slobidka": {
+        "departures_forth": {}
+    },
+    **{
+        slug: {
+            "departures_forth": {},
+            "departures_back": {}
+        } for slug in ["voskresenka", "raiduzhnyi"]
+    },
+    "pochaina": {
+        "departures_back": {}
+    }
+}
+
 
 class Departure(BaseModel):
     schedule: str
@@ -190,7 +231,7 @@ def merge_schedules(schedules: list) -> List[dict]:
 
 
 @cache(seconds=86400)
-async def get_schedule() -> List[dict]:
+async def _get_base_schedule() -> List[dict]:
     """
     Get schedule for every station in both directions
     :return: list of stations with additional properties
@@ -241,6 +282,38 @@ async def get_schedule() -> List[dict]:
     for station in schedule:
         station['transfers'] = TRANSFERS_BADGES.get(station['slug'], [])
         station['transfer_details'] = TRANSFERS.get(station['slug'], [])
+
+    return schedule
+
+
+async def get_schedule() -> List[dict]:
+    """
+    Get schedule with warnings and temporary changes
+    :return: list of stations with additional properties
+    """
+    schedule = await _get_base_schedule()
+
+    for station in schedule:
+        station["station_seo"] = station["station"] if not station.get("old_name") \
+            else f'{station["station"]} (раніше: {station["old_name"]})'
+
+        rm_wd = REMOVE_TRAINS_WEEKDAY.get(station["slug"], {})
+        rm_we = REMOVE_TRAINS_WEEKEND.get(station["slug"], {})
+
+        for key, props in rm_wd.items():
+            for item in station[key]:
+                if props and not all(item[k] == v for k, v in props.items()):
+                    continue
+                item["removed"] = {"when": ["weekday"]}
+
+        for key, props in rm_we.items():
+            for item in station[key]:
+                if props and not all(item[k] == v for k, v in props.items()):
+                    continue
+                if item.get("removed") is not None:
+                    item["removed"]["when"].append("weekend")
+                else:
+                    item["removed"] = {"when": ["weekend"]}
 
     return schedule
 
