@@ -2,312 +2,312 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     <url>
         <loc>https://urbanrail.kyiv.group/</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>1.00</priority>
     </url>
     <url>
         <loc>https://urbanrail.kyiv.group/stations</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.20</priority>
     </url>
     <url>
         <loc>https://urbanrail.kyiv.group/stations/darnitsia</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.64</priority>
     </url>
     <url>
-        <loc>https://urbanrail.kyiv.group/stations/kiyivska-rusanivka</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <loc>https://urbanrail.kyiv.group/stations/rusanivka</loc>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.64</priority>
     </url>
     <url>
         <loc>https://urbanrail.kyiv.group/stations/livoberezhna</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.64</priority>
     </url>
     <url>
-        <loc>https://urbanrail.kyiv.group/stations/kiyiv-dniprov</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <loc>https://urbanrail.kyiv.group/stations/mikilska-slobidka</loc>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.64</priority>
     </url>
     <url>
-        <loc>https://urbanrail.kyiv.group/stations/troieshchina</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <loc>https://urbanrail.kyiv.group/stations/voskresenka</loc>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.64</priority>
     </url>
     <url>
-        <loc>https://urbanrail.kyiv.group/stations/troieshchina-2</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <loc>https://urbanrail.kyiv.group/stations/raiduzhnyi</loc>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.64</priority>
     </url>
     <url>
         <loc>https://urbanrail.kyiv.group/stations/pochaina</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.64</priority>
     </url>
     <url>
-        <loc>https://urbanrail.kyiv.group/stations/zenit</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <loc>https://urbanrail.kyiv.group/stations/kurenivka</loc>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.64</priority>
     </url>
     <url>
-        <loc>https://urbanrail.kyiv.group/stations/vishgorodska</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <loc>https://urbanrail.kyiv.group/stations/priorka</loc>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.64</priority>
     </url>
     <url>
         <loc>https://urbanrail.kyiv.group/stations/sirets</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.64</priority>
     </url>
     <url>
-        <loc>https://urbanrail.kyiv.group/stations/rubezhivska</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <loc>https://urbanrail.kyiv.group/stations/beresteiska</loc>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.64</priority>
     </url>
     <url>
         <loc>https://urbanrail.kyiv.group/stations/sviatoshin</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.64</priority>
     </url>
     <url>
         <loc>https://urbanrail.kyiv.group/stations/borshchagivka</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.64</priority>
     </url>
     <url>
         <loc>https://urbanrail.kyiv.group/stations/kiyiv-volinskii</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.64</priority>
     </url>
     <url>
         <loc>https://urbanrail.kyiv.group/stations/karavaievi-dachi</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.64</priority>
     </url>
     <url>
-        <loc>https://urbanrail.kyiv.group/stations/kiyiv-pas-pivnichna</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <loc>https://urbanrail.kyiv.group/stations/vokzalna</loc>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.64</priority>
     </url>
     <url>
         <loc>https://urbanrail.kyiv.group/stations/protasiv-iar</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.64</priority>
     </url>
     <url>
         <loc>https://urbanrail.kyiv.group/stations/kiyiv-demiyivskii</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.64</priority>
     </url>
     <url>
         <loc>https://urbanrail.kyiv.group/stations/vidubichi</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.64</priority>
     </url>
     <url>
-        <loc>https://urbanrail.kyiv.group/stations/livii-bereg</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <loc>https://urbanrail.kyiv.group/stations/bereznyaky</loc>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.64</priority>
     </url>
     <url>
         <loc>https://urbanrail.kyiv.group/stations/darnitsia/weekday</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.51</priority>
     </url>
     <url>
         <loc>https://urbanrail.kyiv.group/stations/darnitsia/weekend</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.51</priority>
     </url>
     <url>
-        <loc>https://urbanrail.kyiv.group/stations/kiyivska-rusanivka/weekday</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <loc>https://urbanrail.kyiv.group/stations/rusanivka/weekday</loc>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.51</priority>
     </url>
     <url>
-        <loc>https://urbanrail.kyiv.group/stations/kiyivska-rusanivka/weekend</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <loc>https://urbanrail.kyiv.group/stations/rusanivka/weekend</loc>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.51</priority>
     </url>
     <url>
         <loc>https://urbanrail.kyiv.group/stations/livoberezhna/weekday</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.51</priority>
     </url>
     <url>
         <loc>https://urbanrail.kyiv.group/stations/livoberezhna/weekend</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.51</priority>
     </url>
     <url>
-        <loc>https://urbanrail.kyiv.group/stations/kiyiv-dniprov/weekday</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <loc>https://urbanrail.kyiv.group/stations/mikilska-slobidka/weekday</loc>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.51</priority>
     </url>
     <url>
-        <loc>https://urbanrail.kyiv.group/stations/kiyiv-dniprov/weekend</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <loc>https://urbanrail.kyiv.group/stations/mikilska-slobidka/weekend</loc>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.51</priority>
     </url>
     <url>
-        <loc>https://urbanrail.kyiv.group/stations/troieshchina/weekday</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <loc>https://urbanrail.kyiv.group/stations/voskresenka/weekday</loc>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.51</priority>
     </url>
     <url>
-        <loc>https://urbanrail.kyiv.group/stations/troieshchina/weekend</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <loc>https://urbanrail.kyiv.group/stations/voskresenka/weekend</loc>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.51</priority>
     </url>
     <url>
-        <loc>https://urbanrail.kyiv.group/stations/troieshchina-2/weekday</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <loc>https://urbanrail.kyiv.group/stations/raiduzhnyi/weekday</loc>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.51</priority>
     </url>
     <url>
-        <loc>https://urbanrail.kyiv.group/stations/troieshchina-2/weekend</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <loc>https://urbanrail.kyiv.group/stations/raiduzhnyi/weekend</loc>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.51</priority>
     </url>
     <url>
         <loc>https://urbanrail.kyiv.group/stations/pochaina/weekday</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.51</priority>
     </url>
     <url>
         <loc>https://urbanrail.kyiv.group/stations/pochaina/weekend</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.51</priority>
     </url>
     <url>
-        <loc>https://urbanrail.kyiv.group/stations/zenit/weekday</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <loc>https://urbanrail.kyiv.group/stations/kurenivka/weekday</loc>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.51</priority>
     </url>
     <url>
-        <loc>https://urbanrail.kyiv.group/stations/zenit/weekend</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <loc>https://urbanrail.kyiv.group/stations/kurenivka/weekend</loc>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.51</priority>
     </url>
     <url>
-        <loc>https://urbanrail.kyiv.group/stations/vishgorodska/weekday</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <loc>https://urbanrail.kyiv.group/stations/priorka/weekday</loc>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.51</priority>
     </url>
     <url>
-        <loc>https://urbanrail.kyiv.group/stations/vishgorodska/weekend</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <loc>https://urbanrail.kyiv.group/stations/priorka/weekend</loc>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.51</priority>
     </url>
     <url>
         <loc>https://urbanrail.kyiv.group/stations/sirets/weekday</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.51</priority>
     </url>
     <url>
         <loc>https://urbanrail.kyiv.group/stations/sirets/weekend</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.51</priority>
     </url>
     <url>
-        <loc>https://urbanrail.kyiv.group/stations/rubezhivska/weekday</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <loc>https://urbanrail.kyiv.group/stations/beresteiska/weekday</loc>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.51</priority>
     </url>
     <url>
-        <loc>https://urbanrail.kyiv.group/stations/rubezhivska/weekend</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <loc>https://urbanrail.kyiv.group/stations/beresteiska/weekend</loc>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.51</priority>
     </url>
     <url>
         <loc>https://urbanrail.kyiv.group/stations/sviatoshin/weekday</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.51</priority>
     </url>
     <url>
         <loc>https://urbanrail.kyiv.group/stations/sviatoshin/weekend</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.51</priority>
     </url>
     <url>
         <loc>https://urbanrail.kyiv.group/stations/borshchagivka/weekday</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.51</priority>
     </url>
     <url>
         <loc>https://urbanrail.kyiv.group/stations/borshchagivka/weekend</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.51</priority>
     </url>
     <url>
         <loc>https://urbanrail.kyiv.group/stations/kiyiv-volinskii/weekday</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.51</priority>
     </url>
     <url>
         <loc>https://urbanrail.kyiv.group/stations/kiyiv-volinskii/weekend</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.51</priority>
     </url>
     <url>
         <loc>https://urbanrail.kyiv.group/stations/karavaievi-dachi/weekday</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.51</priority>
     </url>
     <url>
         <loc>https://urbanrail.kyiv.group/stations/karavaievi-dachi/weekend</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.51</priority>
     </url>
     <url>
-        <loc>https://urbanrail.kyiv.group/stations/kiyiv-pas-pivnichna/weekday</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <loc>https://urbanrail.kyiv.group/stations/vokzalna/weekday</loc>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.51</priority>
     </url>
     <url>
-        <loc>https://urbanrail.kyiv.group/stations/kiyiv-pas-pivnichna/weekend</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <loc>https://urbanrail.kyiv.group/stations/vokzalna/weekend</loc>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.51</priority>
     </url>
     <url>
         <loc>https://urbanrail.kyiv.group/stations/protasiv-iar/weekday</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.51</priority>
     </url>
     <url>
         <loc>https://urbanrail.kyiv.group/stations/protasiv-iar/weekend</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.51</priority>
     </url>
     <url>
         <loc>https://urbanrail.kyiv.group/stations/kiyiv-demiyivskii/weekday</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.51</priority>
     </url>
     <url>
         <loc>https://urbanrail.kyiv.group/stations/kiyiv-demiyivskii/weekend</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.51</priority>
     </url>
     <url>
         <loc>https://urbanrail.kyiv.group/stations/vidubichi/weekday</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.51</priority>
     </url>
     <url>
         <loc>https://urbanrail.kyiv.group/stations/vidubichi/weekend</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.51</priority>
     </url>
     <url>
-        <loc>https://urbanrail.kyiv.group/stations/livii-bereg/weekday</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <loc>https://urbanrail.kyiv.group/stations/bereznyaky/weekday</loc>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.51</priority>
     </url>
     <url>
-        <loc>https://urbanrail.kyiv.group/stations/livii-bereg/weekend</loc>
-        <lastmod>2023-01-22T14:54:12+00:00</lastmod>
+        <loc>https://urbanrail.kyiv.group/stations/bereznyaky/weekend</loc>
+        <lastmod>2024-05-27T08:00:00+00:00</lastmod>
         <priority>0.51</priority>
     </url>
     <url>
