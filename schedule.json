@@ -123,11 +123,6 @@
                     "schedule": "daily",
                     "code": "7446/7447",
                     "time": "21:31"
-                },
-                {
-                    "schedule": "daily",
-                    "code": "7448/7449",
-                    "time": "22:31"
                 }
             ],
             "departures_back": [
@@ -261,8 +256,9 @@
             "transfer_details": []
         },
         {
-            "station": "\u041a\u0438\u0457\u0432\u0441\u044c\u043a\u0430 \u0420\u0443\u0441\u0430\u043d\u0456\u0432\u043a\u0430",
-            "slug": "kiyivska-rusanivka",
+            "station": "Русанівка",
+            "old_name": "\u041a\u0438\u0457\u0432\u0441\u044c\u043a\u0430 \u0420\u0443\u0441\u0430\u043d\u0456\u0432\u043a\u0430",
+            "slug": "rusanivka",
             "departures_forth": [
                 {
                     "schedule": "daily",
@@ -383,11 +379,6 @@
                     "schedule": "daily",
                     "code": "7446/7447",
                     "time": "21:36"
-                },
-                {
-                    "schedule": "daily",
-                    "code": "7448/7449",
-                    "time": "22:36"
                 }
             ],
             "departures_back": [
@@ -633,11 +624,6 @@
                     "schedule": "daily",
                     "code": "7446/7447",
                     "time": "21:39"
-                },
-                {
-                    "schedule": "daily",
-                    "code": "7448/7449",
-                    "time": "22:39"
                 }
             ],
             "departures_back": [
@@ -767,8 +753,9 @@
             }
         },
         {
-            "station": "\u041a\u0438\u0457\u0432-\u0414\u043d\u0456\u043f\u0440\u043e\u0432.",
-            "slug": "kiyiv-dniprov",
+            "station": "\u041c\u0438\u043a\u0456\u043b\u044c\u0441\u044c\u043a\u0430 \u0421\u043b\u043e\u0431\u0456\u0434\u043a\u0430",
+            "old_name": "Київ-Дніпровський",
+            "slug": "mikilska-slobidka",
             "departures_forth": [
                 {
                     "schedule": "daily",
@@ -889,11 +876,6 @@
                     "schedule": "daily",
                     "code": "7446/7447",
                     "time": "21:42"
-                },
-                {
-                    "schedule": "daily",
-                    "code": "7448/7449",
-                    "time": "22:42"
                 }
             ],
             "departures_back": [
@@ -1017,8 +999,9 @@
             "transfer_details": []
         },
         {
-            "station": "\u0422\u0440\u043e\u0454\u0449\u0438\u043d\u0430",
-            "slug": "troieshchina",
+            "station": "\u0412\u043e\u0441\u043a\u0440\u0435\u0441\u0435\u043d\u043a\u0430",
+            "old_name": "\u0422\u0440\u043e\u0454\u0449\u0438\u043d\u0430",
+            "slug": "voskresenka",
             "departures_forth": [
                 {
                     "schedule": "daily",
@@ -1139,11 +1122,6 @@
                     "schedule": "daily",
                     "code": "7446/7447",
                     "time": "21:45"
-                },
-                {
-                    "schedule": "daily",
-                    "code": "7448/7449",
-                    "time": "22:45"
                 }
             ],
             "departures_back": [
@@ -1267,8 +1245,9 @@
             "transfer_details": []
         },
         {
-            "station": "\u0422\u0440\u043e\u0454\u0449\u0438\u043d\u0430-2",
-            "slug": "troieshchina-2",
+            "station": "Райдужний",
+            "old_name": "\u0422\u0440\u043e\u0454\u0449\u0438\u043d\u0430-2",
+            "slug": "raiduzhnyi",
             "departures_forth": [
                 {
                     "schedule": "daily",
@@ -1389,11 +1368,6 @@
                     "schedule": "daily",
                     "code": "7446/7447",
                     "time": "21:47"
-                },
-                {
-                    "schedule": "daily",
-                    "code": "7448/7449",
-                    "time": "22:47"
                 }
             ],
             "departures_back": [
@@ -1647,11 +1621,6 @@
                     "schedule": "daily",
                     "code": "7446/7447",
                     "time": "21:57"
-                },
-                {
-                    "schedule": "daily",
-                    "code": "7448/7449",
-                    "time": "22:57"
                 }
             ],
             "departures_back": [
@@ -1781,8 +1750,9 @@
             }
         },
         {
-            "station": "\u0417\u0435\u043d\u0456\u0442",
-            "slug": "zenit",
+            "station": "\u041a\u0443\u0440\u0435\u043d\u0456\u0432\u043a\u0430",
+            "old_name": "\u0417\u0435\u043d\u0456\u0442",
+            "slug": "kurenivka",
             "departures_forth": [
                 {
                     "schedule": "daily",
@@ -1903,11 +1873,6 @@
                     "schedule": "daily",
                     "code": "7446/7447",
                     "time": "22:00"
-                },
-                {
-                    "schedule": "daily",
-                    "code": "7448/7449",
-                    "time": "23:00"
                 }
             ],
             "departures_back": [
@@ -2031,8 +1996,9 @@
             "transfer_details": []
         },
         {
-            "station": "\u0412\u0438\u0448\u0433\u043e\u0440\u043e\u0434\u0441\u044c\u043a\u0430",
-            "slug": "vishgorodska",
+            "station": "\u041f\u0440\u0456\u043e\u0440\u043a\u0430",
+            "old_name": "\u0412\u0438\u0448\u0433\u043e\u0440\u043e\u0434\u0441\u044c\u043a\u0430",
+            "slug": "priorka",
             "departures_forth": [
                 {
                     "schedule": "daily",
@@ -2153,11 +2119,6 @@
                     "schedule": "daily",
                     "code": "7446/7447",
                     "time": "22:04"
-                },
-                {
-                    "schedule": "daily",
-                    "code": "7448/7449",
-                    "time": "23:04"
                 }
             ],
             "departures_back": [
@@ -2403,11 +2364,6 @@
                     "schedule": "daily",
                     "code": "7446/7447",
                     "time": "22:09"
-                },
-                {
-                    "schedule": "daily",
-                    "code": "7448/7449",
-                    "time": "23:09"
                 }
             ],
             "departures_back": [
@@ -2537,8 +2493,9 @@
             }
         },
         {
-            "station": "\u0420\u0443\u0431\u0435\u0436\u0456\u0432\u0441\u044c\u043a\u0430",
-            "slug": "rubezhivska",
+            "station": "\u0411\u0435\u0440\u0435\u0441\u0442\u0435\u0439\u0441\u044c\u043a\u0430",
+            "old_name": "\u0420\u0443\u0431\u0435\u0436\u0456\u0432\u0441\u044c\u043a\u0430",
+            "slug": "beresteiska",
             "departures_forth": [
                 {
                     "schedule": "daily",
@@ -2659,11 +2616,6 @@
                     "schedule": "daily",
                     "code": "7446/7447",
                     "time": "22:13"
-                },
-                {
-                    "schedule": "daily",
-                    "code": "7448/7449",
-                    "time": "23:13"
                 }
             ],
             "departures_back": [
@@ -3797,8 +3749,9 @@
             "transfer_details": []
         },
         {
-            "station": "\u041a\u0438\u0457\u0432-\u041f\u0430\u0441. (\u041f\u0456\u0432\u043d\u0456\u0447\u043d\u0430)",
-            "slug": "kiyiv-pas-pivnichna",
+            "station": "Вокзальна",
+            "old_name": "\u041a\u0438\u0457\u0432-\u041f\u0430\u0441. (\u041f\u0456\u0432\u043d\u0456\u0447\u043d\u0430)",
+            "slug": "vokzalna",
             "departures_forth": [
                 {
                     "schedule": "daily",
@@ -4815,8 +4768,9 @@
             }
         },
         {
-            "station": "\u041b\u0456\u0432\u0438\u0439 \u0411\u0435\u0440\u0435\u0433",
-            "slug": "livii-bereg",
+            "station": "Березняки",
+            "old_name": "\u041b\u0456\u0432\u0438\u0439 \u0411\u0435\u0440\u0435\u0433",
+            "slug": "bereznyaky",
             "departures_forth": [
                 {
                     "schedule": "daily",

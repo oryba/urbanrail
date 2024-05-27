@@ -9,6 +9,7 @@ from fastapi import FastAPI, Request, status, APIRouter
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+from starlette.responses import RedirectResponse
 
 from data import get_schedule, Schedule, get_trains
 
@@ -18,6 +19,18 @@ BASE_URL = os.getenv('BASE_URL', 'https://urbanrail.kyiv.group')
 
 app.mount("/static", StaticFiles(directory="static"), name="static")  # regular static files
 templates = Jinja2Templates(directory="templates")
+
+RENAME_REDIRECTS = {
+    "kiyivska-rusanivka": "rusanivka",
+    "kiyiv-dniprov": "mikilska-slobidka",
+    "troieshchina": "voskresenka",
+    "troieshchina-2": "raiduzhnyi",
+    "zenit": "kurenivka",
+    "vishgorodska": "priorka",
+    "rubezhivska": "beresteiska",
+    "kiyiv-pas-pivnichna": "vokzalna",
+    "livii-bereg": "bereznyaky",
+}
 
 
 @app.get("/", response_class=HTMLResponse, tags=["ssr"])
@@ -55,6 +68,8 @@ async def read_item(request: Request, slug: str, day: Optional[str] = None):
     schedule = await get_schedule()
     slugs = [s['slug'] for s in schedule]
     try:
+        if slug in RENAME_REDIRECTS:
+            return RedirectResponse(request.url.path.replace(slug, RENAME_REDIRECTS[slug]), status_code=301)
         idx = slugs.index(slug)
     except ValueError:
         raise status.HTTP_404_NOT_FOUND
