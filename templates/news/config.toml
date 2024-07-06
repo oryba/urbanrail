@@ -7,7 +7,7 @@ publishDir = "../../static/root/news"
 # Remove it if you use the theme as a remote Hugo Module.
 paginate = 5
 
-disableKinds = ["taxonomy", "taxonomyTerm"]
+disableKinds = ["taxonomy"]
 
 [params]
   # dir name of your main content (default is `content/posts`).
