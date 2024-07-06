@@ -495,7 +495,8 @@
                 {
                     "schedule": "daily",
                     "code": "7348/7349",
-                    "time": "22:24"
+                    "time": "22:24",
+                    "removed": {"when": ["weekday"]}
                 }
             ],
             "transfers": [],
@@ -740,7 +741,8 @@
                 {
                     "schedule": "daily",
                     "code": "7348/7349",
-                    "time": "22:22"
+                    "time": "22:22",
+                    "removed": {"when": ["weekday"]}
                 }
             ],
             "transfers": [
@@ -992,7 +994,8 @@
                 {
                     "schedule": "daily",
                     "code": "7348/7349",
-                    "time": "22:19"
+                    "time": "22:19",
+                    "removed": {"when": ["weekday"]}
                 }
             ],
             "transfers": [],
@@ -1238,7 +1241,8 @@
                 {
                     "schedule": "daily",
                     "code": "7348/7349",
-                    "time": "22:16"
+                    "time": "22:16",
+                    "removed": {"when": ["weekday", "weekend"]}
                 }
             ],
             "transfers": [],
@@ -1484,7 +1488,8 @@
                 {
                     "schedule": "daily",
                     "code": "7348/7349",
-                    "time": "22:14"
+                    "time": "22:14",
+                    "removed": {"when": ["weekday", "weekend"]}
                 }
             ],
             "transfers": [
@@ -1737,7 +1742,8 @@
                 {
                     "schedule": "daily",
                     "code": "7348/7349",
-                    "time": "22:03"
+                    "time": "22:03",
+                    "removed": {"when": ["weekday", "weekend"]}
                 }
             ],
             "transfers": [
@@ -1989,7 +1995,8 @@
                 {
                     "schedule": "daily",
                     "code": "7348/7349",
-                    "time": "22:00"
+                    "time": "22:00",
+                    "removed": {"when": ["weekday", "weekend"]}
                 }
             ],
             "transfers": [],
@@ -2235,7 +2242,8 @@
                 {
                     "schedule": "daily",
                     "code": "7348/7349",
-                    "time": "21:56"
+                    "time": "21:56",
+                    "removed": {"when": ["weekday", "weekend"]}
                 }
             ],
             "transfers": [],
@@ -2480,7 +2488,8 @@
                 {
                     "schedule": "daily",
                     "code": "7348/7349",
-                    "time": "21:51"
+                    "time": "21:51",
+                    "removed": {"when": ["weekday", "weekend"]}
                 }
             ],
             "transfers": [
@@ -2732,7 +2741,8 @@
                 {
                     "schedule": "daily",
                     "code": "7348/7349",
-                    "time": "21:47"
+                    "time": "21:47",
+                    "removed": {"when": ["weekday", "weekend"]}
                 }
             ],
             "transfers": [
@@ -2978,7 +2988,8 @@
                 {
                     "schedule": "daily",
                     "code": "7348/7349",
-                    "time": "21:39"
+                    "time": "21:39",
+                    "removed": {"when": ["weekday", "weekend"]}
                 }
             ],
             "transfers": [
