@@ -5,7 +5,7 @@ from datetime import datetime
 from typing import Optional
 
 import pytz
-from fastapi import FastAPI, Request, status, APIRouter
+from fastapi import FastAPI, Request, status, APIRouter, HTTPException
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
@@ -72,7 +72,7 @@ async def read_item(request: Request, slug: str, day: Optional[str] = None):
             return RedirectResponse(request.url.path.replace(slug, RENAME_REDIRECTS[slug]), status_code=301)
         idx = slugs.index(slug)
     except ValueError:
-        raise status.HTTP_404_NOT_FOUND
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND)
     station = schedule[idx]
     now = datetime.now().astimezone(pytz.timezone('Europe/Kiev'))
     time = f"{now.hour:02d}:{now.minute:02d}"
@@ -102,7 +102,7 @@ async def read_item(request: Request, code: str):
     schedule = await get_schedule()
     trains = await get_trains(schedule)
     if not trains.get(code):
-        raise status.HTTP_404_NOT_FOUND
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND)
     station_data = {s['slug']: s for s in schedule}
     return templates.TemplateResponse(
         "train.html", {"request": request, "st": station_data, "train": trains[code], "code": code})
@@ -116,8 +116,19 @@ async def api_schedule() -> Schedule:
     return Schedule(items=await get_schedule())
 
 
+static_files = StaticFiles(directory="static/root", html=True)
+
+
+@app.exception_handler(404)
+async def handle_404(request, exc):
+    full_path, stat_result = await static_files.lookup_path("404.html")
+    return static_files.file_response(
+        full_path, stat_result, {"method": "GET", "headers": {}}, status_code=404
+    )
+
+
 app.include_router(api, prefix="/v1")
-app.mount("/", StaticFiles(directory="static/root", html=True), name="root-static")
+app.mount("/", static_files, name="root-static")
 
 if __name__ == '__main__':
     import uvicorn
