@@ -1,13 +1,20 @@
-<h2 class="other-station">
-    <span>Останні оновлення</span>
-    {% if (now - updates[0].dt).days <= 3 %}<span class="notify-badge">1</span>{% endif %}
-</h2>
-<table>
-    {% for update in updates %}
-    <tr itemscope itemtype="http://schema.org/Event">
-        <meta itemprop="startDate" content="{{ update.dt.isoformat() }}">
-        <td class="time">{{ update.dt_local if update.dt.year != now.year else update.dt_local_month }}</td>
-        <td class="text" itemprop="description"><a href="{{ update.link }}">{{ update.text }}</a></td>
-    </tr>
-    {% endfor %}
-</table>
+<section class="updates text-container">
+    <h2 class="other-station">
+        <span>Останні оновлення</span>
+        {% if (now - updates[0].dt).days <= 3 %}<span class="notify-badge">1</span>{% endif %}
+    </h2>
+    <table>
+        {% for update in updates %}
+        <tr itemscope itemtype="http://schema.org/Event">
+            <meta itemprop="startDate" content="{{ update.dt.isoformat() }}">
+            <td class="time">{{ update.dt_local if update.dt.year != now.year else update.dt_local_month }}</td>
+            <td class="text" itemprop="description"><a href="{{ update.link }}">{{ update.text }}</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <p>
+        А ще у нашому <a href="/news">блозі</a> та у <a href="https://t.me/urbanrail" rel="nofollow">телеграмі</a>
+        можна почитати про історію створення сайту, оновлення, статистику та, звісно, плани на майбутнє.
+    </p>
+</section>

@@ -89,7 +89,9 @@ async def read_item(request: Request, slug: str, day: Optional[str] = None):
         station['departures_back'] = [s for s in station['departures_back'] if s['schedule'] == 'daily']
     return templates.TemplateResponse("station.html", {
         "request": request, "schedule": schedule, "station": station, "time": time, "day": day,
-        "detected_day": detected_day, "canonical": urljoin(BASE_URL, request.scope.get('path', ''))})
+        "detected_day": detected_day, "canonical": urljoin(BASE_URL, request.scope.get('path', '')),
+        "now": datetime.now(), "updates": UPDATES
+    })
 
 
 @app.get("/trains/{code}", response_class=HTMLResponse, tags=["ssr"])
