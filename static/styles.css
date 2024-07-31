@@ -407,17 +407,18 @@ footer {
 }
 
 
-.updates table {
-    margin: 10px 0 25px;
+.updates .updates-list {
+    margin: 10px 0 30px;
 }
 
-.updates table td {
-    padding-top: 10px;
+.updates .update-item {
+    padding-top: 15px;
 }
 
-.updates table td.time {
+.updates .time {
     color: #5c5c5c;
-    padding-right: 20px;
+    font-style: italic;
+    margin-bottom: 3px;
 }
 
 .notify-badge {
@@ -524,7 +525,7 @@ footer {
         color: #f0eff7;
     }
 
-    .updates table td.time {
+    .updates .time {
         color: #c9c9c9;
     }
 }

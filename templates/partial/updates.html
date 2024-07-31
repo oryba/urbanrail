@@ -3,15 +3,15 @@
         <span>Останні оновлення</span>
         {% if (now - updates[0].dt).days <= 3 %}<span class="notify-badge">1</span>{% endif %}
     </h2>
-    <table>
+    <div class="updates-list">
         {% for update in updates %}
-        <tr itemscope itemtype="http://schema.org/Event">
+        <div class="update-item" itemscope itemtype="http://schema.org/Event">
             <meta itemprop="startDate" content="{{ update.dt.isoformat() }}">
-            <td class="time">{{ update.dt_local if update.dt.year != now.year else update.dt_local_month }}</td>
-            <td class="text" itemprop="description"><a href="{{ update.link }}">{{ update.text }}</a></td>
-        </tr>
+            <div class="time">{{ update.dt_local if update.dt.year != now.year else update.dt_local_month }}</div>
+            <div class="text" itemprop="description"><a href="{{ update.link }}">{{ update.text }}</a></div>
+        </div>
         {% endfor %}
-    </table>
+    </div>
 
     <p>
         А ще у нашому <a href="/news">блозі</a> та у <a href="https://t.me/urbanrail" rel="nofollow">телеграмі</a>
