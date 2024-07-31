@@ -5,10 +5,12 @@
     </h2>
     <div class="updates-list">
         {% for update in updates %}
-        <div class="update-item" itemscope itemtype="http://schema.org/Event">
-            <meta itemprop="startDate" content="{{ update.dt.isoformat() }}">
+        <div class="update-item" itemscope itemprop="SpecialAnnouncement" itemtype="https://schema.org/SpecialAnnouncement">
+            <meta itemprop="datePosted" content="{{ update.dt.isoformat() }}">
+            {% if update.expires %} <meta itemprop="expires" content="{{ update.expires.isoformat() }}" /> {% endif %}
             <div class="time">{{ update.dt_local if update.dt.year != now.year else update.dt_local_month }}</div>
-            <div class="text" itemprop="description"><a href="{{ update.link }}">{{ update.text }}</a></div>
+            <div class="text" itemprop="name" content="{{ update.text }}"><a href="{{ update.link }}" itemprop="url" content="{{ update.link }}">{{ update.text }}</a></div>
+            <meta itemprop="text" content="{{ update.description }}" />
         </div>
         {% endfor %}
     </div>
