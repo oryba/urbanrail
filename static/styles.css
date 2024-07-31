@@ -483,3 +483,26 @@ footer {
         border: 1px dashed #f0eff7;
     }
 }
+
+.updates table {
+    margin: 10px 0 25px;
+}
+
+.updates table td {
+    padding-top: 10px;
+}
+
+.updates table td.time {
+    color: #5c5c5c;
+    padding-right: 20px;
+}
+
+.notify-badge {
+    background: #e52924;
+    color: white;
+    border-radius: 50px;
+    padding: 0 4px;
+    font-size: 15px;
+    margin-left: 10px;
+    margin-bottom: 15px;
+}

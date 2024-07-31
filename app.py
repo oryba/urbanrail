@@ -12,6 +12,7 @@ from fastapi.templating import Jinja2Templates
 from starlette.responses import RedirectResponse
 
 from data import get_schedule, Schedule, get_trains
+from updates import UPDATES
 
 app = FastAPI()
 
@@ -41,7 +42,8 @@ async def read_item(request: Request):
     :return: static html
     """
     schedule = await get_schedule()
-    return templates.TemplateResponse("index.html", {"request": request, "schedule": schedule})
+    return templates.TemplateResponse(
+        "index.html", {"request": request, "schedule": schedule, "updates": UPDATES, "now": datetime.now()})
 
 
 @app.get("/stations", response_class=HTMLResponse, tags=["ssr"])
