@@ -89,7 +89,7 @@ disableKinds = ["taxonomy"]
 
     [languages.uk.params.logo]
       logoText = "Підпільний блог розкладу київської міської електрички"
-      logoHomeLink = "/news"
+      logoHomeLink = "/news/"
 
     [languages.uk.menu]
       [[languages.uk.menu.main]]
