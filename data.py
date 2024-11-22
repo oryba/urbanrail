@@ -41,21 +41,20 @@ REMOVE_TRAINS_WEEKDAY = {
     }
 }
 
-REMOVE_TRAINS_WEEKEND = {}
-# {
-#     "mikilska-slobidka": {
-#         "departures_forth": {}
-#     },
-#     **{
-#         slug: {
-#             "departures_forth": {},
-#             "departures_back": {}
-#         } for slug in ["voskresenka", "raiduzhnyi"]
-#     },
-#     "pochaina": {
-#         "departures_back": {}
-#     }
-# }
+REMOVE_TRAINS_WEEKEND = {
+    "mikilska-slobidka": {
+        "departures_forth": {}
+    },
+    **{
+        slug: {
+            "departures_forth": {},
+            "departures_back": {}
+        } for slug in ["voskresenka", "raiduzhnyi"]
+    },
+    "pochaina": {
+        "departures_back": {}
+    }
+}
 
 
 class Departure(BaseModel):
