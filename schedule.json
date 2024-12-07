@@ -7,6 +7,7 @@
                 {
                     "schedule": "daily",
                     "code": "7401",
+                    "removed": {"when": ["weekday", "weekend"]},
                     "time": "05:31"
                 },
                 {
@@ -263,6 +264,7 @@
                 {
                     "schedule": "daily",
                     "code": "7401",
+                    "removed": {"when": ["weekday", "weekend"]},
                     "time": "05:35"
                 },
                 {
@@ -509,6 +511,7 @@
                 {
                     "schedule": "daily",
                     "code": "7401",
+                    "removed": {"when": ["weekday", "weekend"]},
                     "time": "05:38"
                 },
                 {
@@ -762,6 +765,7 @@
                 {
                     "schedule": "daily",
                     "code": "7401",
+                    "removed": {"when": ["weekday", "weekend"]},
                     "time": "05:41"
                 },
                 {
@@ -1009,6 +1013,7 @@
                 {
                     "schedule": "daily",
                     "code": "7401",
+                    "removed": {"when": ["weekday", "weekend"]},
                     "time": "05:44"
                 },
                 {
@@ -1256,6 +1261,7 @@
                 {
                     "schedule": "daily",
                     "code": "7401",
+                    "removed": {"when": ["weekday", "weekend"]},
                     "time": "05:46"
                 },
                 {
@@ -1510,6 +1516,7 @@
                 {
                     "schedule": "daily",
                     "code": "7401",
+                    "removed": {"when": ["weekday", "weekend"]},
                     "time": "05:57"
                 },
                 {
@@ -1763,6 +1770,7 @@
                 {
                     "schedule": "daily",
                     "code": "7401",
+                    "removed": {"when": ["weekday", "weekend"]},
                     "time": "06:00"
                 },
                 {
@@ -2010,6 +2018,7 @@
                 {
                     "schedule": "daily",
                     "code": "7401",
+                    "removed": {"when": ["weekday", "weekend"]},
                     "time": "06:04"
                 },
                 {
@@ -2256,6 +2265,7 @@
                 {
                     "schedule": "daily",
                     "code": "7401",
+                    "removed": {"when": ["weekday", "weekend"]},
                     "time": "06:09"
                 },
                 {
@@ -2509,6 +2519,7 @@
                 {
                     "schedule": "daily",
                     "code": "7401",
+                    "removed": {"when": ["weekday", "weekend"]},
                     "time": "06:13"
                 },
                 {
