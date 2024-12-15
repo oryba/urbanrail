@@ -290,6 +290,15 @@ h3.old-name {
     background: #f0eff7!important;
 }
 
+.time-badge.badge-warning {
+    color: #494949!important;
+    background: #ffa503!important;
+}
+
+.time-badge.badge-warning::before {
+    content: '!';
+}
+
 .time-badge.compare-time {
     background: #18137b;
     color: white;

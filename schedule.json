@@ -2768,6 +2768,133 @@
         {
             "station": "\u0421\u0432\u044f\u0442\u043e\u0448\u0438\u043d",
             "slug": "sviatoshin",
+            "arrivals_back": [
+                {
+                    "schedule": "daily",
+                    "code": "7301",
+                    "time": "06:29"
+                },
+                {
+                    "schedule": "daily",
+                    "code": "7302/7303",
+                    "time": "07:29"
+                },
+                {
+                    "schedule": "weekday",
+                    "code": "7305",
+                    "time": "07:59"
+                },
+                {
+                    "schedule": "daily",
+                    "code": "7306/7307",
+                    "time": "08:29"
+                },
+                {
+                    "schedule": "weekday",
+                    "code": "7308/7309",
+                    "time": "08:59"
+                },
+                {
+                    "schedule": "daily",
+                    "code": "7310/7311",
+                    "time": "09:29"
+                },
+                {
+                    "schedule": "weekday",
+                    "code": "7312/7313",
+                    "time": "09:59"
+                },
+                {
+                    "schedule": "daily",
+                    "code": "7314/7315",
+                    "time": "10:29"
+                },
+                {
+                    "schedule": "weekday",
+                    "code": "7316/7317",
+                    "time": "10:59"
+                },
+                {
+                    "schedule": "daily",
+                    "code": "7318/7319",
+                    "time": "11:29"
+                },
+                {
+                    "schedule": "daily",
+                    "code": "7320/7321",
+                    "time": "12:29"
+                },
+                {
+                    "schedule": "daily",
+                    "code": "7322/7323",
+                    "time": "13:29"
+                },
+                {
+                    "schedule": "daily",
+                    "code": "7324/7325",
+                    "time": "14:29"
+                },
+                {
+                    "schedule": "daily",
+                    "code": "7326/7327",
+                    "time": "15:29"
+                },
+                {
+                    "schedule": "daily",
+                    "code": "7328/7329",
+                    "time": "16:29"
+                },
+                {
+                    "schedule": "daily",
+                    "code": "7330/7331",
+                    "time": "17:29"
+                },
+                {
+                    "schedule": "weekday",
+                    "code": "7332/7333",
+                    "time": "17:59"
+                },
+                {
+                    "schedule": "daily",
+                    "code": "7334/7335",
+                    "time": "18:29"
+                },
+                {
+                    "schedule": "weekday",
+                    "code": "7336/7337",
+                    "time": "18:59"
+                },
+                {
+                    "schedule": "daily",
+                    "code": "7338/7339",
+                    "time": "19:29"
+                },
+                {
+                    "schedule": "weekday",
+                    "code": "7340/7341",
+                    "time": "19:59"
+                },
+                {
+                    "schedule": "daily",
+                    "code": "7342/7343",
+                    "time": "20:29"
+                },
+                {
+                    "schedule": "daily",
+                    "code": "7344/7345",
+                    "time": "21:29"
+                },
+                {
+                    "schedule": "daily",
+                    "code": "7346/7347",
+                    "time": "22:29"
+                },
+                {
+                    "schedule": "daily",
+                    "code": "7348/7349",
+                    "time": "23:29"
+                }
+            ],
             "departures_forth": [
                 {
                     "schedule": "daily",

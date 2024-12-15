@@ -63,15 +63,15 @@
     <a href="/stations/{{ station.slug }}/weekday" class="{{ day == 'weekday' and 'active' }}">Будні</a>
     <a href="/stations/{{ station.slug }}/weekend" class="{{ day == 'weekend' and 'active' }}">Вихідні</a>
 </section>
-<section class="prompt warning">
-    <h2>Зміни розкладу <a href="/news/posts/зміни-руху-північним-півкільцем-київської-міської-електрички-продовжено/">до закінчення робіт</a> – будівництво тунелю для зʼїзду з мосту:</h2>
-    <ul>
-        <li><b>будні</b> – "пікові" щопівгодинні рейси Дарниця – Почайна – Святошин скасовано</li>
-        <li><b>вихідні до 13 жовтня</b> – рух ділянкою Почайна – Микільська Слобідка не здійснюватиметься, станції Райдужна та Воскресенка не працюватимуть</li>
-    </ul>
-    <p>Скасовані рейси у розкладі виділено перекресленими червоними позначками. У разі виявлення помилок, будь ласка, пишіть у <a href="https://t.me/urbanrail" rel="nofollow">телеграм-канал</a>, виправимо.</p>
-    <br>
-</section>
+<!--<section class="prompt warning">-->
+<!--    <h2>Зміни розкладу до 15 грудня:</h2>-->
+<!--    <ul>-->
+<!--        <li><b>будні</b> – "пікові" щопівгодинні рейси Дарниця – Почайна – Святошин скасовано</li>-->
+<!--        <li><b>четвер, 12 грудня</b> – станція Святошин <a href="/news/posts/12-грудня-станція-святошин-не-працюватиме-з-900-до-1700/">не працюватиме</a> з 9:00 до 17:00</li>-->
+<!--    </ul>-->
+<!--    <p>Скасовані рейси виділено перекресленими червоними позначками, а для Святошина - помаранчевими. У разі виявлення помилок, будь ласка, пишіть у <a href="https://t.me/urbanrail" rel="nofollow">телеграм-канал</a>, виправимо.</p>-->
+<!--    <br>-->
+<!--</section>-->
 <!--<section class="prompt info">-->
 <!--    <h2>У вихідні 22, 23, 29, 30 червня обмеження руху скасовано</h2>-->
 <!--</section>-->
@@ -88,7 +88,7 @@
         {% for item in station.departures_forth %}
         <a
             href="/trains/{{ item.code | replace('/', '-')}}"
-            class="time-badge time-badge-font {{not day and 'compare-time'}} {{ 'past' if not day and item.time < time else 'future' }} {{ 'badge-crossed' if item.removed and detected_day in item.removed.when else ''}}"
+            class="time-badge time-badge-font {{not day and 'compare-time'}} {{ 'past' if not day and item.time < time else 'future' }} {{ 'badge-crossed' if item.removed and detected_day in item.removed.when else ''}} {{ 'badge-warning' if item.warning and detected_day in item.warning.when else ''}}"
         >
             {{ item.time }}
         </a>
@@ -108,7 +108,7 @@
         {% for item in station.departures_back %}
         <a
             href="/trains/{{ item.code | replace('/', '-')}}"
-            class="time-badge time-badge-font {{not day and 'compare-time'}} {{ 'past' if not day and item.time < time else 'future' }} {{ 'badge-crossed' if item.removed and detected_day in item.removed.when else ''}}"
+            class="time-badge time-badge-font {{not day and 'compare-time'}} {{ 'past' if not day and item.time < time else 'future' }} {{ 'badge-crossed' if item.removed and detected_day in item.removed.when else ''}} {{ 'badge-warning' if item.warning and detected_day in item.warning.when else ''}}"
         >
             {{ item.time }}
         </a>

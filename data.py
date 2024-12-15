@@ -15,46 +15,47 @@ URLS_SCHEDULE = [
     "https://swrailway.gov.ua/timetable/eltrain/?gid=1&rid=480",
 ]
 
-REMOVE_TRAINS_WEEKDAY = {
-    "darnitsia": {
-        "departures_forth": {
-            "schedule": "weekday"
-        }
-    },
-    **{
-        slug: {
-            "departures_forth": {
-                "schedule": "weekday"
-            },
-            "departures_back": {
-                "schedule": "weekday"
-            }
-        } for slug in [
-            "rusanivka", "livoberezhna", "mikilska-slobidka", "voskresenka", "raiduzhnyi", "pochaina",
-            "kurenivka", "priorka", "sirets", "beresteiska"
-        ]
-    },
-    "sviatoshin": {
-        "departures_back": {
-            "schedule": "weekday"
-        }
-    }
-}
+REMOVE_TRAINS_WEEKDAY = {}
+#     "darnitsia": {
+#         "departures_forth": {
+#             "schedule": "weekday"
+#         }
+#     },
+#     **{
+#         slug: {
+#             "departures_forth": {
+#                 "schedule": "weekday"
+#             },
+#             "departures_back": {
+#                 "schedule": "weekday"
+#             }
+#         } for slug in [
+#             "rusanivka", "livoberezhna", "mikilska-slobidka", "voskresenka", "raiduzhnyi", "pochaina",
+#             "kurenivka", "priorka", "sirets", "beresteiska"
+#         ]
+#     },
+#     "sviatoshin": {
+#         "departures_back": {
+#             "schedule": "weekday"
+#         }
+#     }
+# }
 
-REMOVE_TRAINS_WEEKEND = {
-    "mikilska-slobidka": {
-        "departures_forth": {}
-    },
-    **{
-        slug: {
-            "departures_forth": {},
-            "departures_back": {}
-        } for slug in ["voskresenka", "raiduzhnyi"]
-    },
-    "pochaina": {
-        "departures_back": {}
-    }
-}
+REMOVE_TRAINS_WEEKEND = {}
+# {
+#     "mikilska-slobidka": {
+#         "departures_forth": {}
+#     },
+#     **{
+#         slug: {
+#             "departures_forth": {},
+#             "departures_back": {}
+#         } for slug in ["voskresenka", "raiduzhnyi"]
+#     },
+#     "pochaina": {
+#         "departures_back": {}
+#     }
+# }
 
 
 class Departure(BaseModel):
