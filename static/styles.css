@@ -117,6 +117,7 @@ span.icon, .flex-align-center {
 }
 
 .icon > svg {
+    width: clamp(1rem, 6vw, 3rem);
     height: clamp(1rem, 6vw, 3rem);
 }
 
