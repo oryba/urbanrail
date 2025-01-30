@@ -266,7 +266,7 @@ h3.old-name {
     text-align: center;
     width: 90%;
     margin: auto;
-    overflow: scroll;
+    overflow: auto;
     display: block;
 }
 
