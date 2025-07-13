@@ -372,6 +372,12 @@ footer {
     border-bottom: 4px solid #6cf1ff;
 }
 
+.prompt.error {
+    border-top: 4px solid #f87c7c;
+    border-bottom: 4px solid #f87c7c;
+    background: #ffbfbf;
+}
+
 .prompt h2 {
     font-size: clamp(1rem, 5vw, 1.5rem);
 }
